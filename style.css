@@ -10,14 +10,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   gap: 4rem;
-  padding: 2rem;
+  padding: 4rem 2rem;
 }
 
 .hero-image img {
-  width: 320px;
-  height: auto;
+  width: 300px;
+  max-height: 380px;
+  object-fit: cover;
   border-radius: 12px;
 }
 
