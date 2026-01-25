@@ -1,13 +1,10 @@
-/* --------------------
-   Global Reset & Font
---------------------- */
-
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
 
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -18,101 +15,108 @@ body {
   color: #ffffff;
 }
 
-/* --------------------
-   Background
---------------------- */
-
+/* Background */
 body {
   background: url("background1.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* --------------------
-   Header / Navigation
---------------------- */
+/* ---------------- DESKTOP NAV ---------------- */
 
-header {
+.desktop-nav {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem 4rem;
+  top: 2rem;
+  right: 4rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 2.5rem;
   z-index: 10;
 }
 
-.site-name {
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem; /* more space between buttons */
-}
-
-.nav-links a {
-  text-decoration: none;
+.desktop-nav a {
   color: #ffffff;
+  text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: opacity 0.2s ease;
 }
 
-.nav-links a:hover {
-  opacity: 0.75;
+/* ---------------- HAMBURGER (MOBILE ONLY) ---------------- */
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 20;
+  cursor: pointer;
 }
 
-/* --------------------
-   Hero Section
---------------------- */
+/* Mobile slide menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease;
+  z-index: 15;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+/* ---------------- HERO ---------------- */
 
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 4rem;
-  position: relative;
+  padding-left: 0;
+  padding-right: 4rem;
 }
-
-/* Image */
 
 .hero-image {
   flex: 0 0 auto;
-  margin-left: -1.5rem; /* pushes photo further left */
 }
 
 .hero-image img {
-  height: 78vh; /* scales with screen height */
-  max-height: 820px;
+  height: 85vh;
   width: auto;
   display: block;
 }
 
 /* Content */
-
 .hero-content {
-  margin-left: 5rem;
+  margin-left: 4rem;
   max-width: 520px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  font-weight: 600;
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .hero-content p {
   font-size: 1.1rem;
-  font-style: italic; /* ONLY this line italic */
-  opacity: 0.9;
+  font-style: italic;
   margin-bottom: 2rem;
+  opacity: 0.9;
 }
-
-/* Button */
 
 .hero-content a {
   display: inline-block;
@@ -121,49 +125,37 @@ header {
   background-color: #e8e2f6;
   color: #1a1a1a;
   text-decoration: none;
-  font-size: 0.95rem;
   font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero-content a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* --------------------
-   Responsive (Mobile)
---------------------- */
+/* ---------------- MOBILE ---------------- */
 
 @media (max-width: 900px) {
-  header {
-    padding: 1.5rem 2rem;
+  .desktop-nav {
+    display: none;
   }
 
-  .nav-links {
-    display: none; /* hamburger already handled */
+  .hamburger {
+    display: block;
   }
 
   .hero {
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 2rem 2rem;
     text-align: center;
-  }
-
-  .hero-image {
-    margin-left: 0;
-    margin-bottom: 2rem;
+    padding: 6rem 2rem 2rem;
   }
 
   .hero-image img {
     height: auto;
-    width: 70%;
-    max-width: 320px;
+    width: 75%;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
   .hero-content {
     margin-left: 0;
+    margin-top: 2rem;
   }
 
   .hero-content h1 {
