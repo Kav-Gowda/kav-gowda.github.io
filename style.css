@@ -167,57 +167,57 @@ body::before {
 }
 
 /* =========================
-   ABOUT PAGE (DESKTOP) — FINAL, LOCKED & STABLE
+   ABOUT PAGE (DESKTOP) — FINAL & CORRECT
    ========================= */
 
 .about-main {
   height: 100vh;
-  overflow: hidden;           /* no scroll */
-  position: relative;         /* anchor for absolute photo */
-  display: flex;
-  align-items: center;
-}
-
-/* GRID LAYOUT (editor stays in flow) */
-.about-layout {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  align-items: center;
-  gap: 3.5rem;
+  overflow: hidden;
   position: relative;
-  z-index: 2;                 /* above photo */
 }
 
-/* PHOTO — pinned bottom-left like Home */
+/* PHOTO — flush left, bottom aligned, viewport-anchored */
 .about-photo {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 6vw;
-  height: 100%;
+  left: 0;
+  height: 100vh;
+  width: 40vw;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   z-index: 1;
   pointer-events: none;
 }
 
 .about-photo img {
-  height: 82vh;               /* EXACT match with Home */
+  height: 82vh;                /* EXACT Home size */
   max-height: 880px;
   width: auto;
   filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.28));
 }
 
-/* CODE EDITOR — fixed, never overlaps */
+/* CONTENT — pushed right, never overlaps */
+.about-layout {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6vw;
+  padding-left: 42vw;          /* reserves space for photo */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* CODE EDITOR */
 .about-codecard {
+  width: 100%;
+  max-width: 520px;
   background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
-  position: relative;
-  z-index: 2;
 }
 
 /* TOP BAR */
@@ -245,7 +245,7 @@ body::before {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* BODY — stable typing, no layout shift */
+/* BODY — stable typing */
 .codecard-body {
   height: 320px;
   padding: 2.2rem;
