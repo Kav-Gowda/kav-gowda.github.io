@@ -12,7 +12,6 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Cinzel", serif;
-  color: #ffffff;
 }
 
 /* =========================
@@ -117,7 +116,7 @@ body::before {
 }
 
 /* =========================
-   HERO (HOME)
+   HERO — HOME (DESKTOP)
    ========================= */
 
 .hero {
@@ -138,17 +137,21 @@ body::before {
   height: 82vh;
   max-height: 880px;
   width: auto;
+  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.45));
 }
 
+/* HERO TEXT — DARK LAVENDER */
 .hero-content h1 {
   font-size: 3.4rem;
   margin-bottom: 0.8rem;
+  color: #4a3b78;
 }
 
 .hero-content p {
   font-size: 1.05rem;
   font-style: italic;
   margin-bottom: 1.8rem;
+  color: #5b4b8a;
 }
 
 .cta {
@@ -161,7 +164,51 @@ body::before {
 }
 
 /* =========================
-   ABOUT PAGE (DESKTOP)
+   HERO — HOME (MOBILE ONLY)
+   ========================= */
+
+@media (max-width: 900px) {
+  /* NAV */
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* HOME HERO — LOCKED */
+  body > .hero {
+    min-height: auto;
+    padding: 4.6rem 1.4rem 2.2rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  body > .hero .hero-image {
+    justify-content: center;
+  }
+
+  body > .hero .hero-image img {
+    width: 78vw;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1.2rem;
+  }
+
+  body > .hero .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  body > .hero .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+  }
+}
+
+/* =========================
+   ABOUT PAGE (UNCHANGED)
    ========================= */
 
 .about-main {
@@ -202,13 +249,6 @@ body::before {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.codecard-topbar .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-}
-
 .codecard-title {
   margin-left: auto;
   font-size: 0.8rem;
@@ -220,62 +260,4 @@ body::before {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-/* =========================
-   MOBILE FIXES (CRITICAL)
-   ========================= */
-
-@media (max-width: 900px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  /* HOME */
-  .hero {
-    min-height: auto;
-    padding: 4.5rem 1.4rem 2rem;
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-image img {
-    width: 80vw;
-    max-width: 280px;
-    height: auto;
-    margin-bottom: 1.2rem;
-  }
-
-  /* ABOUT — FIXED */
-  .about-main {
-    padding: 4.5rem 1.4rem 2rem;
-    align-items: flex-start;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .about-photo {
-    justify-content: center;
-  }
-
-  .about-photo img {
-    width: 70vw;
-    max-width: 240px;
-    height: auto;
-  }
-
-  .about-codecard {
-    width: 100%;
-  }
-
-  .codecard-body {
-    font-size: 0.9rem;
-  }
 }
