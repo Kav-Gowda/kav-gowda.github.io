@@ -51,7 +51,7 @@ body.about-page {
 }
 
 /* =========================
-   NAVIGATION (GLOBAL)
+   NAVIGATION
    ========================= */
 
 .desktop-nav {
@@ -63,8 +63,17 @@ body.about-page {
   z-index: 20;
 }
 
-.desktop-nav a {
+/* Home nav (light on dark) */
+body.home-page .desktop-nav a {
   color: #ffffff;
+}
+
+/* About nav (darker / lavender) */
+body.about-page .desktop-nav a {
+  color: #5b4b8a;
+}
+
+.desktop-nav a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -72,7 +81,7 @@ body.about-page {
 }
 
 .desktop-nav a:hover {
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 /* =========================
@@ -133,7 +142,6 @@ body.about-page {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.3rem;
-  letter-spacing: 0.04em;
 }
 
 /* =========================
@@ -152,6 +160,7 @@ body.about-page {
 .hero-image {
   display: flex;
   align-items: flex-end;
+  height: 100%;
 }
 
 .hero-image img {
@@ -169,7 +178,6 @@ body.about-page {
 .hero-content p {
   font-size: 1.1rem;
   font-style: italic;
-  opacity: 0.9;
   margin-bottom: 2.2rem;
 }
 
@@ -188,38 +196,46 @@ body.about-page {
    ========================= */
 
 .about-main {
-  padding: 6rem 6vw 4rem;
-}
-
-.about-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 4rem;
+  min-height: 100vh;
+  padding: 5rem 6vw;
+  display: flex;
   align-items: center;
 }
 
-/* ABOUT PHOTO — RESTORED PRESENCE */
+.about-layout {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* PHOTO — FULL HEIGHT ALIGNMENT */
+.about-photo {
+  display: flex;
+  align-items: flex-end;
+}
+
 .about-photo img {
-  height: 70vh;
-  max-height: 720px;
+  height: 100%;
+  max-height: calc(100vh - 6rem);
   width: auto;
   filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.45));
 }
 
-/* CODE CARD */
+/* CODE EDITOR — TALLER */
 .about-codecard {
-  background: rgba(15, 18, 22, 0.88);
-  border-radius: 14px;
+  background: rgba(18, 22, 26, 0.9);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
 }
 
 .codecard-topbar {
   display: flex;
   gap: 0.6rem;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.2rem;
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -237,10 +253,13 @@ body.about-page {
 }
 
 .codecard-body {
-  padding: 1.6rem;
+  padding: 2rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.95rem;
   line-height: 1.7;
+  white-space: pre-wrap;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
 }
 
 /* =========================
@@ -269,12 +288,11 @@ body.about-page {
 
   .about-layout {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
   .about-photo img {
+    width: min(80vw, 320px);
     height: auto;
-    width: min(80vw, 300px);
     margin: 0 auto;
   }
 }
