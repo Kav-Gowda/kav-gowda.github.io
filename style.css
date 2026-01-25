@@ -256,12 +256,13 @@ body::before {
   color: #f2f2f6;
 }
 /* =========================
-   MOBILE — FINAL, LOCKED, NO-SCROLL
+   MOBILE — FINAL, LOCKED, NO-SCROLL (FIXED)
    ========================= */
 
 @media (max-width: 900px) {
 
-  /* Hide desktop nav, show hamburger */
+  /* ---------- GLOBAL MOBILE ---------- */
+
   .desktop-nav {
     display: none;
   }
@@ -270,7 +271,6 @@ body::before {
     display: block;
   }
 
-  /* Lock viewport */
   html,
   body {
     height: 100svh;
@@ -293,7 +293,6 @@ body::before {
     z-index: 2;
   }
 
-  /* Force true centering */
   body.home-page .hero-content {
     width: 100%;
     max-width: 360px;
@@ -301,10 +300,11 @@ body::before {
     z-index: 3;
   }
 
-  /* FIX: name was too large */
+  /* FIX: name too large */
   body.home-page .hero-content h1 {
-    font-size: 1.7rem;
-    line-height: 1.15;
+    font-size: 1.7rem;          /* smaller so full name fits */
+    line-height: 1.25;
+    word-break: keep-all;
   }
 
   body.home-page .hero-content p {
@@ -312,7 +312,7 @@ body::before {
     margin-bottom: 1.2rem;
   }
 
-  /* Photo — DO NOT TOUCH (already perfect) */
+  /* PHOTO — PERFECT, DO NOT TOUCH */
   body.home-page .hero-image {
     position: fixed;
     bottom: 0;
@@ -331,36 +331,33 @@ body::before {
     height: 100%;
     width: auto;
     margin: 0;
-    max-height: none;
   }
 
   /* =========================
-     ABOUT PAGE — MOBILE
+     ABOUT PAGE — MOBILE (FIXED)
      ========================= */
 
   body.about-page .about-main {
     height: 100svh;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* KEY FIX */
-    padding-top: 4.2rem;
     position: relative;
     z-index: 2;
   }
 
+  /* Layout MUST start from top */
   body.about-page .about-layout {
-    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    padding-top: 5.2rem;
+    padding-bottom: 50svh; /* RESERVES SPACE FOR PHOTO */
     gap: 1.6rem;
-    margin-top: 0;             /* prevents drop-down */
     z-index: 3;
   }
 
-  /* Editor — centered, wider, taller */
+  /* EDITOR — TOP, CENTERED, BIGGER */
   body.about-page .about-codecard {
     width: 92%;
     max-width: 420px;
@@ -373,7 +370,7 @@ body::before {
     padding: 1.8rem;
   }
 
-  /* Photo — slightly smaller ONLY on About page */
+  /* PHOTO — SMALLER, BOTTOM ONLY */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
@@ -391,8 +388,6 @@ body::before {
     display: block;
     height: 100%;
     width: auto;
-    max-height: none;
     margin: 0;
   }
 }
-
