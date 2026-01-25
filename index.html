@@ -8,52 +8,51 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="nav-left">Kavitha</div>
+    <!-- PAGE BACKGROUND -->
+    <div class="page-bg">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <div class="nav-left">Kavitha</div>
 
-      <!-- Desktop navigation -->
-      <nav class="nav-links">
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Resume</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="hamburger" onclick="openMenu()">☰</div>
+      </header>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <span class="close-btn" onclick="closeMenu()">×</span>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Resume</a>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
-      </nav>
+      </div>
 
-      <!-- Mobile hamburger -->
-      <div class="hamburger" onclick="openMenu()">☰</div>
-    </header>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-image">
+          <img src="profile.jpg" alt="Kavitha Lingarajegowda" />
+        </div>
 
-    <!-- Mobile slide-in menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <span class="close-btn" onclick="closeMenu()">×</span>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Resume</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Contact</a>
+        <div class="hero-text">
+          <h1>Kavitha Lingarajegowda</h1>
+          <p>I’m an Automotive Software Engineer from Germany</p>
+          <a href="#" class="btn">About me</a>
+        </div>
+      </section>
     </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-image">
-        <img src="profile.jpg" alt="Kavitha Lingarajegowda" />
-      </div>
-
-      <div class="hero-text">
-        <h1>Kavitha Lingarajegowda</h1>
-        <p>I’m an Automotive Software Engineer from Germany</p>
-        <a href="#" class="btn">About me</a>
-      </div>
-    </section>
-
-    <!-- JS for mobile menu -->
     <script>
       function openMenu() {
         document.getElementById("mobileMenu").style.left = "0";
       }
-
       function closeMenu() {
         document.getElementById("mobileMenu").style.left = "-100%";
       }
