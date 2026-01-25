@@ -65,7 +65,7 @@ body::before {
   display: none;
   position: fixed;
   top: 1.1rem;
-  left: 1.1rem;
+  left: 1.25rem;
   z-index: 60;
   width: 44px;
   height: 44px;
@@ -390,5 +390,142 @@ body::before {
     width: auto;
     max-height: none;
     margin: 0;
+  }
+}
+/* =========================
+   MOBILE — FINAL, LOCKED, NO-SCROLL (CORRECTED)
+   ========================= */
+
+@media (max-width: 900px) {
+
+  /* Hide desktop nav, show hamburger */
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Lock viewport */
+  html,
+  body {
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  /* =========================
+     HOME PAGE — MOBILE
+     ========================= */
+
+  body.home-page .hero {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ✅ CENTER */
+    justify-content: flex-start;
+    padding-top: 5.2rem;
+    text-align: center;         /* ✅ CENTER TEXT */
+    position: relative;
+    z-index: 2;
+  }
+
+  body.home-page .hero-content {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;             /* ✅ FORCE CENTER */
+    z-index: 3;
+  }
+
+  body.home-page .hero-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  body.home-page .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  /* Photo — unchanged */
+  body.home-page .hero-image {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52svh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  body.home-page .hero-image img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    max-height: none;
+  }
+
+  /* =========================
+     ABOUT PAGE — MOBILE
+     ========================= */
+
+  body.about-page .about-main {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 4.8rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  body.about-page .about-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ✅ CENTER EDITOR */
+    justify-content: flex-start;
+    z-index: 3;
+  }
+
+  /* Editor — centered, wider, taller */
+  body.about-page .about-codecard {
+    width: 92%;                 /* ✅ WIDER */
+    max-width: 420px;
+    margin: 0 auto;             /* ✅ CENTER */
+  }
+
+  body.about-page .codecard-body {
+    height: 320px;              /* ✅ MORE TEXT VISIBLE */
+    font-size: 0.95rem;
+    padding: 1.8rem;
+  }
+
+  /* Photo — unchanged */
+  body.about-page .about-photo {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52svh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  body.about-page .about-photo img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    max-height: none;
   }
 }
