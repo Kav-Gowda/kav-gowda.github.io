@@ -270,10 +270,11 @@ body::before {
     display: block;
   }
 
+  /* Lock the viewport (prevents scroll) */
   html,
   body {
-    height: 100vh;
-    overflow: hidden; /* NO SCROLL */
+    height: 100svh;          /* better than 100vh on mobile */
+    overflow: hidden;        /* NO SCROLL */
   }
 
   /* =========================
@@ -281,7 +282,7 @@ body::before {
      ========================= */
 
   body.home-page .hero {
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -311,7 +312,7 @@ body::before {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 52vh;
+    height: 52svh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -320,6 +321,7 @@ body::before {
   }
 
   body.home-page .hero-image img {
+    display: block;      /* prevents baseline gap */
     height: 100%;
     width: auto;
     margin: 0;
@@ -331,7 +333,7 @@ body::before {
      ========================= */
 
   body.about-page .about-main {
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -368,7 +370,8 @@ body::before {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 52vh;
+    width: auto;       /* override desktop width: 40vw */
+    height: 52svh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -377,6 +380,7 @@ body::before {
   }
 
   body.about-page .about-photo img {
+    display: block;    /* prevents baseline gap */
     height: 100%;
     width: auto;
     max-height: none;
