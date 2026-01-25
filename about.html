@@ -10,25 +10,22 @@
   <body class="about-page">
     <div class="page-bg about-bg"></div>
 
-    <!-- MOBILE HAMBURGER -->
     <button class="hamburger" id="hamburger">☰</button>
 
-    <!-- MOBILE MENU -->
     <aside class="mobile-menu" id="mobileMenu">
       <button class="close" id="closeMenu">×</button>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="achievements.html">Achievements</a>
       <a href="contact.html">Contact</a>
     </aside>
 
-    <!-- DESKTOP NAV -->
     <nav class="desktop-nav">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="achievements.html">Achievements</a>
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -77,29 +74,23 @@
         }
       });
 
-      /* Typewriter effect */
       const text = `Hello, my name is Kavitha.
 
 I am a Junior AI Engineer working at the intersection of
 software engineering, large language models, and evaluation systems.
 
-I build end-to-end AI pipelines — from data and prompts
-to deterministic evaluation, monitoring, and deployment —
-with a strong focus on reliability and real-world use.
+I build AI systems that value correctness, reliability,
+and real-world impact.
 
-I enjoy turning complex AI behavior into systems
-that engineers and educators can actually trust.
-`;
+I enjoy doing difficult things properly.`;
 
       const target = document.getElementById("typewriter");
       let index = 0;
-      const speed = 20;
 
       function type() {
         if (index < text.length) {
-          target.textContent += text.charAt(index);
-          index++;
-          setTimeout(type, speed);
+          target.textContent += text.charAt(index++);
+          setTimeout(type, 20);
         }
       }
 
