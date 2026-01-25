@@ -256,13 +256,12 @@ body::before {
   color: #f2f2f6;
 }
 /* =========================
-   MOBILE — FINAL, LOCKED, NO-SCROLL (FIXED)
+   MOBILE — FINAL, CLEAN, LOCKED
    ========================= */
 
 @media (max-width: 900px) {
 
-  /* ---------- GLOBAL MOBILE ---------- */
-
+  /* Hide desktop nav, show hamburger */
   .desktop-nav {
     display: none;
   }
@@ -294,16 +293,14 @@ body::before {
   }
 
   body.home-page .hero-content {
-    width: 100%;
-    max-width: 360px;
+    width: 92%;
+    max-width: 340px;
     margin: 0 auto;
-    z-index: 3;
   }
 
-  /* FIX: name too large */
   body.home-page .hero-content h1 {
-    font-size: 1.7rem;          /* smaller so full name fits */
-    line-height: 1.25;
+    font-size: 1.9rem;        /* FIX: prevents last name cutoff */
+    line-height: 1.15;
     word-break: keep-all;
   }
 
@@ -312,7 +309,7 @@ body::before {
     margin-bottom: 1.2rem;
   }
 
-  /* PHOTO — PERFECT, DO NOT TOUCH */
+  /* Photo — DO NOT TOUCH (already perfect) */
   body.home-page .hero-image {
     position: fixed;
     bottom: 0;
@@ -334,17 +331,16 @@ body::before {
   }
 
   /* =========================
-     ABOUT PAGE — MOBILE (FIXED)
+     ABOUT PAGE — MOBILE
      ========================= */
 
   body.about-page .about-main {
     height: 100svh;
     overflow: hidden;
     position: relative;
-    z-index: 2;
   }
 
-  /* Layout MUST start from top */
+  /* IMPORTANT: reserve space ABOVE the photo */
   body.about-page .about-layout {
     height: 100%;
     display: flex;
@@ -352,12 +348,12 @@ body::before {
     align-items: center;
     justify-content: flex-start;
     padding-top: 5.2rem;
-    padding-bottom: 50svh; /* RESERVES SPACE FOR PHOTO */
-    gap: 1.6rem;
+    padding-bottom: 54svh; /* KEY FIX: keeps editor above photo */
+    gap: 1.4rem;
     z-index: 3;
   }
 
-  /* EDITOR — TOP, CENTERED, BIGGER */
+  /* Editor — centered, readable */
   body.about-page .about-codecard {
     width: 92%;
     max-width: 420px;
@@ -370,7 +366,7 @@ body::before {
     padding: 1.8rem;
   }
 
-  /* PHOTO — SMALLER, BOTTOM ONLY */
+  /* Photo — bottom fixed, slightly smaller */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
