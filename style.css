@@ -179,25 +179,27 @@ body::before {
 
 .about-layout {
   width: 100%;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1.35fr;
   align-items: center;
   gap: 3.5rem;
+  margin: 0 auto;
 }
 
 .about-photo {
   display: flex;
-  align-items: flex-end;      /* bottom */
-  justify-content: flex-start;/* left */
+  align-items: flex-end;     /* bottom */
+  justify-content: flex-start; /* left */
   height: 100%;
 }
 
 .about-photo img {
-  height: 82vh;               /* SAME AS HOME */
+  height: 82vh;          /* SAME AS HOME */
   max-height: 880px;
   width: auto;
+  margin-left: 0;
 }
-
 /* CODE EDITOR — RESTORED LOOK (dark editor + light text) */
 .about-codecard {
   background: rgba(18, 22, 26, 0.90);
