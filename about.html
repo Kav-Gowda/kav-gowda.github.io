@@ -46,48 +46,15 @@
             <span class="codecard-title">ABOUT_ME.TXT</span>
           </div>
 
-          <pre class="codecard-body"><code>
-01 const kavitha = {
-02   role: "Junior AI Engineer",
-03   focus: ["LLMs", "Evaluation Systems", "Applied AI"],
-04
-05   summary:
-06     "I design and operate end-to-end AI systems with a strong focus on
-07      large language models, evaluation pipelines, and production-ready
-08      machine learning workflows. My work bridges research and engineering,
-09      with an emphasis on reliability, reproducibility, and real-world impact.",
-10
-11   experience: [
-12     "Built an LLM-based grading and feedback system for 300+ real exam
-13      answers, achieving ~96% agreement with human evaluators.",
-14
-15     "Designed deterministic, agent-driven evaluation pipelines with
-16      fully auditable outputs and Retrieval-Augmented Generation grounded
-17      in lecture material and grading rubrics.",
-18
-19     "Analyzed LLM behavior across 600+ student responses, benchmarking
-20      foundation models such as DeepSeek, Mistral, and LLaMA-2 using
-21      structured metrics and error analysis."
-22   ],
-23
-24   engineering: [
-25     "Python-based data pipelines, ETL workflows, and feature engineering",
-26     "PyTorch, NLP, Hugging Face, LangChain, LangGraph",
-27     "Model evaluation, experiment tracking, CI/CD, and monitoring",
-28     "Cloud platforms: AWS, Azure, GCP"
-29   ],
-30
-31   mindset:
-32     "I value clean architecture, measurable evaluation, and systems that
-33      behave predictably under real constraints. I enjoy working at the
-34      intersection of software engineering and AI research."
-35 };
-          </code></pre>
+          <div class="codecard-body">
+            <span id="typewriter"></span>
+          </div>
         </div>
       </section>
     </main>
 
     <script>
+      /* Hamburger menu */
       const hamburger = document.getElementById("hamburger");
       const mobileMenu = document.getElementById("mobileMenu");
       const closeMenu = document.getElementById("closeMenu");
@@ -110,6 +77,36 @@
           mobileMenu.classList.remove("open");
         }
       });
+
+      /* Typewriter effect */
+      const text = `Hello, my name is Kavitha.
+
+I am a Junior AI Engineer working at the intersection of
+software engineering, large language models, and evaluation systems.
+
+I build end-to-end AI pipelines — from data and prompts
+to deterministic evaluation, monitoring, and deployment —
+with a strong focus on reliability and real-world use.
+
+I enjoy turning complex AI behavior into systems
+that engineers and educators can actually trust.
+
+Outside of code, I value consistency, curiosity,
+and doing difficult things properly.`;
+
+      const target = document.getElementById("typewriter");
+      let index = 0;
+      const speed = 20; // ~3–5 seconds total
+
+      function type() {
+        if (index < text.length) {
+          target.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, speed);
+        }
+      }
+
+      window.addEventListener("load", type);
     </script>
   </body>
 </html>
