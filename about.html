@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,58 +13,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="page about-page">
-    <!-- Background layer -->
+  <body class="about-page">
+    <!-- BACKGROUND -->
     <div class="page-bg about-bg" aria-hidden="true"></div>
 
-    <!-- Mobile nav toggle (CSS-only) -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation" />
+    <!-- MOBILE HAMBURGER -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
 
-    <!-- Top navigation -->
-    <header class="site-header">
-      <!-- Mobile: hamburger (top-left) -->
-      <label for="nav-toggle" class="hamburger" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </label>
+    <!-- MOBILE SLIDE MENU -->
+    <aside class="mobile-menu" id="mobileMenu">
+      <button class="close" id="closeMenu" aria-label="Close menu">×</button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </aside>
 
-      <!-- Desktop: top-right links -->
-      <nav class="nav-desktop" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-      <!-- Mobile: slide-in panel from left (Gmail-style) -->
-      <nav class="nav-mobile" aria-label="Mobile Primary">
-        <div class="nav-mobile-panel">
-          <div class="nav-mobile-header">
-            <span class="nav-mobile-title">Menu</span>
-            <label for="nav-toggle" class="nav-close" aria-label="Close navigation">×</label>
-          </div>
-
-          <a href="index.html">Home</a>
-          <a class="active" href="about.html">About</a>
-          <a href="resume.html">Resume</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Click-out overlay -->
-        <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
-      </nav>
-    </header>
-
-    <!-- Main content -->
+    <!-- MAIN CONTENT -->
     <main class="about-main">
       <section class="about-layout">
-        <!-- Left: your cutout photo -->
+        <!-- LEFT: PHOTO -->
         <div class="about-photo">
           <img src="profile-cutout.png" alt="Portrait of Kavitha" />
         </div>
 
-        <!-- Right: code-style layout (content comes in Step 2) -->
+        <!-- RIGHT: CODE CARD -->
         <div class="about-codecard" role="region" aria-label="About text">
           <div class="codecard-topbar">
             <span class="dot"></span>
@@ -73,13 +56,49 @@
             <span class="codecard-title">about_me.txt</span>
           </div>
 
-          <pre class="codecard-body"><code><span class="line"><span class="ln">01</span><span class="kw">const</span> <span class="id">kavitha</span> = {</span>
+          <pre class="codecard-body"><code>
+<span class="line"><span class="ln">01</span><span class="kw">const</span> <span class="id">kavitha</span> = {</span>
 <span class="line"><span class="ln">02</span>  <span class="key">focus</span>: <span class="str">"Automotive Software Engineering"</span>,</span>
 <span class="line"><span class="ln">03</span>  <span class="key">currently</span>: <span class="str">"Building reliable systems — and a clean portfolio."</span>,</span>
 <span class="line"><span class="ln">04</span>  <span class="key">about</span>: <span class="str">"Short intro paragraphs go here (we’ll write this next)."</span></span>
-<span class="line"><span class="ln">05</span>};</span></code></pre>
+<span class="line"><span class="ln">05</span>};</span>
+          </code></pre>
         </div>
       </section>
     </main>
+
+    <!-- JS: SAME AS HOME -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeMenu = document.getElementById("closeMenu");
+
+      function closeMenuFn() {
+        mobileMenu.classList.remove("open");
+      }
+
+      hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle("open");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        closeMenuFn();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (mobileMenu.classList.contains("open")) {
+          if (!mobileMenu.contains(e.target) && e.target !== hamburger) {
+            closeMenuFn();
+          }
+        }
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenuFn();
+        });
+      });
+    </script>
   </body>
 </html>
