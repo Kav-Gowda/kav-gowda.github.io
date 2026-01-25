@@ -1,18 +1,20 @@
 /* --------------------
-   Global reset
+   Global Reset & Font
 --------------------- */
 
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html,
 body {
+  width: 100%;
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Cinzel", serif;
   color: #ffffff;
 }
 
@@ -21,167 +23,150 @@ body {
 --------------------- */
 
 body {
-  background-image: url("background1.jpg");
+  background: url("background1.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* optional subtle overlay for polish */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
 }
 
 /* --------------------
-   Navbar (desktop)
+   Header / Navigation
 --------------------- */
 
 header {
-  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 3rem;
+  align-items: center;
+  z-index: 10;
 }
 
-.logo {
-  font-size: 1.4rem;
+.site-name {
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
-nav ul {
-  list-style: none;
+.nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem; /* more space between buttons */
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 0.95rem;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
-nav a:hover {
-  opacity: 1;
+.nav-links a:hover {
+  opacity: 0.75;
 }
 
 /* --------------------
-   Hero layout
+   Hero Section
 --------------------- */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-
-  min-height: calc(100vh - 80px);
   padding: 0 4rem;
+  position: relative;
 }
 
-/* --------------------
-   Hero image (LEFT)
---------------------- */
+/* Image */
 
 .hero-image {
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  flex: 0 0 auto;
+  margin-left: -1.5rem; /* pushes photo further left */
 }
 
 .hero-image img {
-  height: 90vh;
-  max-height: 900px;
+  height: 78vh; /* scales with screen height */
+  max-height: 820px;
   width: auto;
-
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45));
+  display: block;
 }
 
-/* --------------------
-   Hero content (RIGHT)
---------------------- */
+/* Content */
 
 .hero-content {
-  padding-left: 2rem;
+  margin-left: 5rem;
+  max-width: 520px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  line-height: 1.1;
+  font-weight: 600;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero-content p {
   font-size: 1.1rem;
+  font-style: italic; /* ONLY this line italic */
   opacity: 0.9;
   margin-bottom: 2rem;
-  max-width: 520px;
 }
+
+/* Button */
 
 .hero-content a {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 0.8rem 2.2rem;
   border-radius: 999px;
-  background: #e7def8;
+  background-color: #e8e2f6;
   color: #1a1a1a;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-content a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* --------------------
-   Mobile navigation
---------------------- */
-
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* --------------------
-   Responsive (mobile)
+   Responsive (Mobile)
 --------------------- */
 
 @media (max-width: 900px) {
   header {
-    padding: 0 1.5rem;
+    padding: 1.5rem 2rem;
   }
 
-  nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
+  .nav-links {
+    display: none; /* hamburger already handled */
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 2rem;
     text-align: center;
-    padding: 2rem 1.5rem;
   }
 
   .hero-image {
-    justify-content: center;
+    margin-left: 0;
     margin-bottom: 2rem;
   }
 
   .hero-image img {
     height: auto;
+    width: 70%;
     max-width: 320px;
   }
 
   .hero-content {
-    padding-left: 0;
+    margin-left: 0;
   }
 
   .hero-content h1 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
 }
