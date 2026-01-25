@@ -16,40 +16,25 @@ body {
 }
 
 /* =========================
-   PAGE BACKGROUNDS
+   GLOBAL BACKGROUND
    ========================= */
 
-body.home-page {
-  background: url("background1.jpg") no-repeat center center fixed;
+body {
+  background: url("background2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-body.home-page::before {
+/* Subtle overlay for contrast */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.18);
   z-index: -1;
-}
-
-body.about-page {
-  background: none;
-}
-
-.page-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-}
-
-.about-bg {
-  background-image: url("background2.jpg");
 }
 
 /* =========================
-   NAVIGATION
+   NAVIGATION (GLOBAL)
    ========================= */
 
 .desktop-nav {
@@ -57,19 +42,12 @@ body.about-page {
   top: 2rem;
   right: 4rem;
   display: flex;
-  gap: 2.8rem;
+  gap: 2.6rem;
   z-index: 20;
 }
 
-body.home-page .desktop-nav a {
-  color: #ffffff;
-}
-
-body.about-page .desktop-nav a {
-  color: #5b4b8a;
-}
-
 .desktop-nav a {
+  color: #5b4b8a; /* lavender */
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -87,15 +65,15 @@ body.about-page .desktop-nav a {
 .hamburger {
   display: none;
   position: fixed;
-  top: 1.2rem;
-  left: 1.2rem;
+  top: 1.1rem;
+  left: 1.1rem;
   z-index: 30;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.8rem;
+  background: rgba(91, 75, 138, 0.85);
+  border: none;
   color: #ffffff;
   cursor: pointer;
 }
@@ -106,7 +84,7 @@ body.about-page .desktop-nav a {
   left: -280px;
   width: 280px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(20, 18, 32, 0.95);
   backdrop-filter: blur(8px);
   padding: 5rem 2rem;
   display: flex;
@@ -122,10 +100,10 @@ body.about-page .desktop-nav a {
 
 .mobile-menu .close {
   position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
-  width: 44px;
-  height: 44px;
+  top: 1.1rem;
+  left: 1.1rem;
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.15);
   border: none;
@@ -135,9 +113,9 @@ body.about-page .desktop-nav a {
 }
 
 .mobile-menu a {
-  color: #ffffff;
+  color: #e6e1ff;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 /* =========================
@@ -160,26 +138,26 @@ body.about-page .desktop-nav a {
 }
 
 .hero-image img {
-  height: 85vh;
-  max-height: 900px;
+  height: 82vh;
+  max-height: 880px;
   width: auto;
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.45));
 }
 
 .hero-content h1 {
   font-size: 3.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-style: italic;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.8rem;
 }
 
 .cta {
   display: inline-block;
-  padding: 0.85rem 2.4rem;
+  padding: 0.75rem 2.2rem;
   border-radius: 999px;
   background: rgba(235, 230, 250, 0.95);
   color: #1a1a1a;
@@ -188,7 +166,7 @@ body.about-page .desktop-nav a {
 }
 
 /* =========================
-   HERO — MOBILE (FIXED)
+   HERO — MOBILE (SHORTER)
    ========================= */
 
 @media (max-width: 900px) {
@@ -201,35 +179,35 @@ body.about-page .desktop-nav a {
   }
 
   .hero {
+    min-height: auto;
+    padding: 4.8rem 1.6rem 2.2rem;
     grid-template-columns: 1fr;
-    align-items: flex-start;
     text-align: center;
-    padding: 5.5rem 1.6rem 2.5rem;
   }
 
   .hero-image {
     justify-content: center;
-    align-items: flex-start;
   }
 
   .hero-image img {
-    width: 90vw;
-    max-width: 360px;
+    width: 78vw;
+    max-width: 300px;
     height: auto;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.2rem;
   }
 
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
   }
 }
 
 /* =========================
-   ABOUT PAGE
+   ABOUT PAGE (UNCHANGED)
    ========================= */
 
 .about-main {
@@ -294,5 +272,4 @@ body.about-page .desktop-nav a {
   font-size: 1rem;
   line-height: 1.8;
   white-space: pre-wrap;
-  text-align: left;
 }
