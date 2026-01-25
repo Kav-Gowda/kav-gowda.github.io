@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body class="home-page">
     <!-- MOBILE HAMBURGER -->
     <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
 
     <!-- MOBILE SLIDE MENU -->
     <aside class="mobile-menu" id="mobileMenu">
       <button class="close" id="closeMenu" aria-label="Close menu">×</button>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
     </aside>
 
     <!-- DESKTOP NAV -->
     <nav class="desktop-nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <!-- HERO -->
@@ -57,7 +57,7 @@
       }
 
       function closeMenuFn() {
-          mobileMenu.classList.remove("open");
+        mobileMenu.classList.remove("open");
       }
 
       // Toggle when clicking hamburger
@@ -66,12 +66,12 @@
         mobileMenu.classList.toggle("open");
       });
 
-  // Close when clicking X
+      // Close when clicking X
       closeMenu.addEventListener("click", () => {
         closeMenuFn();
       });
 
-  // Close when clicking anywhere outside menu
+      // Close when clicking anywhere outside menu
       document.addEventListener("click", (e) => {
         if (mobileMenu.classList.contains("open")) {
           if (!mobileMenu.contains(e.target) && e.target !== hamburger) {
@@ -80,12 +80,12 @@
         }
       });
 
-  // Close when clicking a menu link
+      // Close when clicking a menu link
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           closeMenuFn();
         });
       });
-  </script>
+    </script>
   </body>
 </html>
