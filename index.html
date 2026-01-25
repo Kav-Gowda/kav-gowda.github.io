@@ -8,54 +8,37 @@
   </head>
 
   <body>
-    <!-- PAGE BACKGROUND -->
-    <div class="page-bg">
-      <!-- NAVBAR -->
-      <header class="navbar">
-        <div class="nav-left">Kavitha</div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">Kavitha</div>
 
-        <nav class="nav-links">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Resume</a>
-          <a href="#">Portfolio</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <div class="hamburger" onclick="openMenu()">☰</div>
-      </header>
-
-      <!-- Mobile menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <span class="close-btn" onclick="closeMenu()">×</span>
+      <nav class="nav-links">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Resume</a>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Menu">
+        ☰
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero">
+      <div class="hero-image">
+        <!-- IMPORTANT: use your cut-out PNG here -->
+        <img src="profile-cutout.png" alt="Kavitha Lingarajegowda" />
       </div>
 
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-image">
-          <img src="profile.jpg" alt="Kavitha Lingarajegowda" />
-        </div>
-
-        <div class="hero-text">
-          <h1>Kavitha Lingarajegowda</h1>
-          <p>I’m an Automotive Software Engineer from Germany</p>
-          <a href="#" class="btn">About me</a>
-        </div>
-      </section>
-    </div>
-
-    <script>
-      function openMenu() {
-        document.getElementById("mobileMenu").style.left = "0";
-      }
-      function closeMenu() {
-        document.getElementById("mobileMenu").style.left = "-100%";
-      }
-    </script>
+      <div class="hero-content">
+        <h1>Kavitha Lingarajegowda</h1>
+        <p>
+          Automotive Software Engineer · LLMs · Evaluation Systems
+        </p>
+        <a href="#about" class="cta-button">About me</a>
+      </div>
+    </main>
   </body>
 </html>
