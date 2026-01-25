@@ -167,48 +167,60 @@ body::before {
 }
 
 /* =========================
-   ABOUT PAGE (DESKTOP) — LOCKED VIEWPORT
+   ABOUT PAGE (DESKTOP) — FINAL, LOCKED & STABLE
    ========================= */
 
 .about-main {
-  height: 100vh;              /* LOCK viewport */
-  overflow: hidden;           /* NO scrolling */
+  height: 100vh;
+  overflow: hidden;           /* no scroll */
+  position: relative;         /* anchor for absolute photo */
   display: flex;
   align-items: center;
 }
 
+/* GRID LAYOUT (editor stays in flow) */
 .about-layout {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.35fr;
   align-items: center;
   gap: 3.5rem;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;                 /* above photo */
 }
 
+/* PHOTO — pinned bottom-left like Home */
 .about-photo {
   position: absolute;
   bottom: 0;
   left: 6vw;
+  height: 100%;
   display: flex;
   align-items: flex-end;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-photo img {
-  height: 82vh;
+  height: 82vh;               /* EXACT match with Home */
   max-height: 880px;
   width: auto;
-  margin-bottom: -25px; /* counteracts drop-shadow bleed */
+  filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.28));
 }
-/* CODE EDITOR — RESTORED LOOK (dark editor + light text) */
+
+/* CODE EDITOR — fixed, never overlaps */
 .about-codecard {
   background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 2;
 }
 
+/* TOP BAR */
 .codecard-topbar {
   display: flex;
   align-items: center;
@@ -233,7 +245,7 @@ body::before {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* lock height so typing doesn't push layout */
+/* BODY — stable typing, no layout shift */
 .codecard-body {
   height: 320px;
   padding: 2.2rem;
