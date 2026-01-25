@@ -188,17 +188,18 @@ body::before {
 }
 
 .about-photo {
+  position: absolute;
+  bottom: 0;
+  left: 6vw;
   display: flex;
-  align-items: flex-end;     /* bottom */
-  justify-content: flex-start; /* left */
-  height: 100%;
+  align-items: flex-end;
 }
 
 .about-photo img {
-  height: 82vh;          /* SAME AS HOME */
+  height: 82vh;
   max-height: 880px;
   width: auto;
-  margin-left: 0;
+  margin-bottom: -25px; /* counteracts drop-shadow bleed */
 }
 /* CODE EDITOR — RESTORED LOOK (dark editor + light text) */
 .about-codecard {
