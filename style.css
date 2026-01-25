@@ -187,6 +187,160 @@ body::before {
     height: auto;
   }
 
+  /* =========================
+   ABOUT PAGE — BASE SETUP
+   ========================= */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  font-family: "Cinzel", serif;
+  color: #ffffff;
+}
+
+/* Background layer */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* About-specific background */
+.about-bg {
+  background-image: url("background2.jpg");
+}
+
+/* =========================
+   ABOUT PAGE — LAYOUT
+   ========================= */
+
+.about-main {
+  padding: 6rem 6vw 4rem;
+}
+
+.about-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* =========================
+   PHOTO (LEFT)
+   ========================= */
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+}
+
+/* =========================
+   CODE-STYLE CARD
+   ========================= */
+
+.about-codecard {
+  background: rgba(15, 18, 22, 0.85);
+  border-radius: 14px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* Top bar */
+.codecard-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.codecard-topbar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.codecard-title {
+  margin-left: auto;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+/* Code body */
+.codecard-body {
+  margin: 0;
+  padding: 1.4rem 1.6rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+/* Line structure */
+.codecard-body .line {
+  display: flex;
+}
+
+.codecard-body .ln {
+  width: 2.2rem;
+  text-align: right;
+  margin-right: 1rem;
+  opacity: 0.35;
+  user-select: none;
+}
+
+/* Syntax colors (subtle, professional) */
+.codecard-body .kw {
+  color: #c792ea;
+}
+
+.codecard-body .id {
+  color: #82aaff;
+}
+
+.codecard-body .key {
+  color: #89ddff;
+}
+
+.codecard-body .str {
+  color: #c3e88d;
+}
+
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+   ========================= */
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .about-photo img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .codecard-body .line {
+    justify-content: flex-start;
+  }
+}
+
   .hero-content h1 {
     font-size: 2.4rem;
   }
