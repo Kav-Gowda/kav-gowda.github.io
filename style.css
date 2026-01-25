@@ -27,11 +27,47 @@ body {
   font-weight: 600;
 }
 
+/* Desktop nav */
 .nav-links a {
   margin-left: 1.5rem;
   text-decoration: none;
   color: #111;
   font-size: 0.95rem;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile slide-in menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: #fde9d9;
+  padding: 2rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-menu a {
+  display: block;
+  margin: 1.5rem 0;
+  text-decoration: none;
+  color: #111;
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 2rem;
 }
 
 /* HERO */
@@ -76,12 +112,12 @@ body {
 
 /* MOBILE */
 @media (max-width: 900px) {
-  .navbar {
-    padding: 1rem 1.5rem;
-  }
-
   .nav-links {
     display: none;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .hero {
