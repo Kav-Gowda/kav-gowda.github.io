@@ -261,6 +261,7 @@ body::before {
    ========================= */
 
 @media (max-width: 900px) {
+
   /* Hide desktop nav, show hamburger */
   .desktop-nav {
     display: none;
@@ -270,11 +271,11 @@ body::before {
     display: block;
   }
 
-  /* Lock the viewport (prevents scroll) */
+  /* Lock viewport */
   html,
   body {
-    height: 100svh;          /* better than 100vh on mobile */
-    overflow: hidden;        /* NO SCROLL */
+    height: 100svh;
+    overflow: hidden;
   }
 
   /* =========================
@@ -285,7 +286,6 @@ body::before {
     height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     padding-top: 5.2rem;
     text-align: center;
@@ -294,6 +294,10 @@ body::before {
   }
 
   body.home-page .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     z-index: 3;
   }
 
@@ -321,7 +325,7 @@ body::before {
   }
 
   body.home-page .hero-image img {
-    display: block;      /* prevents baseline gap */
+    display: block;
     height: 100%;
     width: auto;
     margin: 0;
@@ -349,13 +353,15 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 1.4rem;
+    padding-bottom: 56svh; /* reserves space for photo */
     z-index: 3;
   }
 
-  /* Editor on top */
+  /* Editor — top, centered */
   body.about-page .about-codecard {
     width: 88%;
     max-width: 360px;
+    margin: 0 auto;
   }
 
   body.about-page .codecard-body {
@@ -364,13 +370,12 @@ body::before {
     padding: 1.6rem;
   }
 
-  /* Fixed photo at bottom — SAME AS HOME */
+  /* Fixed photo at bottom */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: auto;       /* override desktop width: 40vw */
     height: 52svh;
     display: flex;
     align-items: flex-end;
@@ -380,7 +385,7 @@ body::before {
   }
 
   body.about-page .about-photo img {
-    display: block;    /* prevents baseline gap */
+    display: block;
     height: 100%;
     width: auto;
     max-height: none;
