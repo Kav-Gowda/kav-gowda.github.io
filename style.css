@@ -178,6 +178,7 @@ body::before {
 }
 
 .about-layout {
+  min-height: 100vh;  /* KEY FIX */
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -187,11 +188,12 @@ body::before {
 }
 
 /* ✅ ONLY CHANGE: make About photo behave like Home photo */
+/* Make About page photo behave EXACTLY like Home page */
 .about-photo {
   display: flex;
-  align-items: flex-end;      /* bottom align like Home */
-  justify-content: flex-start; /* sit like Home (not centered) */
-  height: 100%;
+  align-items: flex-end;      /* bottom */
+  justify-content: flex-start;/* left */
+  height: 100%;               /* KEY FIX */
 }
 
 .about-photo img {
