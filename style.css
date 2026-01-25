@@ -5,11 +5,21 @@
   box-sizing: border-box;
 }
 
+/* PAGE BACKGROUND */
+.page-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #f7f4f1 0%,
+    #eef3ee 40%,
+    #f3edf7 100%
+  );
+}
+
 /* BASE */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
   color: #111;
 }
 
@@ -19,7 +29,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2.5rem;
-  background-color: #fde9d9;
+  background-color: rgba(253, 233, 217, 0.85);
+  backdrop-filter: blur(6px);
 }
 
 .nav-left {
@@ -27,7 +38,6 @@ body {
   font-weight: 600;
 }
 
-/* Desktop nav */
 .nav-links a {
   margin-left: 1.5rem;
   text-decoration: none;
@@ -35,14 +45,13 @@ body {
   font-size: 0.95rem;
 }
 
-/* Hamburger (hidden on desktop) */
 .hamburger {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* Mobile slide-in menu */
+/* MOBILE MENU */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -75,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 80px);
   padding: 3rem 4rem;
   gap: 4rem;
 }
@@ -83,11 +92,12 @@ body {
 .hero-image img {
   width: 100%;
   max-width: 520px;
-  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .hero-text {
-  max-width: 500px;
+  max-width: 520px;
 }
 
 .hero-text h1 {
