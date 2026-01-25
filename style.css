@@ -117,7 +117,8 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   align-items: center;
-  padding: 0 4rem;
+  padding-right: 4rem;   /* keep breathing room for text */
+  padding-left: 0;       /* REMOVE the left gap */
   gap: 3rem;
 }
 
@@ -127,6 +128,7 @@ body::before {
   align-items: flex-end;
   justify-content: flex-start;
   height: 100%;
+  padding-left: 0;
 }
 
 .hero-image img {
