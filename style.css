@@ -19,7 +19,6 @@ body {
    PAGE BACKGROUNDS
    ========================= */
 
-/* HOME */
 body.home-page {
   background: url("background1.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -33,7 +32,6 @@ body.home-page::before {
   z-index: -1;
 }
 
-/* ABOUT */
 body.about-page {
   background: none;
 }
@@ -63,12 +61,10 @@ body.about-page {
   z-index: 20;
 }
 
-/* Home nav */
 body.home-page .desktop-nav a {
   color: #ffffff;
 }
 
-/* About nav — lavender tone */
 body.about-page .desktop-nav a {
   color: #5b4b8a;
 }
@@ -145,53 +141,6 @@ body.about-page .desktop-nav a {
 }
 
 /* =========================
-   HERO (HOME)
-   ========================= */
-
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  align-items: center;
-  gap: 3rem;
-  padding-right: 4rem;
-}
-
-.hero-image {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-}
-
-.hero-image img {
-  height: 85vh;
-  max-height: 900px;
-  width: auto;
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.5));
-}
-
-.hero-content h1 {
-  font-size: 3.4rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  font-style: italic;
-  margin-bottom: 2.2rem;
-}
-
-.cta {
-  display: inline-block;
-  padding: 0.85rem 2.4rem;
-  border-radius: 999px;
-  background: rgba(235, 230, 250, 0.95);
-  color: #1a1a1a;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* =========================
    ABOUT LAYOUT
    ========================= */
 
@@ -255,13 +204,10 @@ body.about-page .desktop-nav a {
   opacity: 0.7;
 }
 
-/* TEXT — CENTERED, NO SCROLL */
+/* TEXT — FIXED: STARTS BELOW TOP BAR */
 .codecard-body {
   height: 320px;
-  padding: 2rem 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2.4rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1rem;
   line-height: 1.8;
