@@ -4,25 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Kavitha</title>
-
-    <!-- Cinzel font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="about-page">
-    <!-- BACKGROUND -->
-    <div class="page-bg about-bg" aria-hidden="true"></div>
+    <div class="page-bg about-bg"></div>
 
     <!-- MOBILE HAMBURGER -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    <button class="hamburger" id="hamburger">☰</button>
 
-    <!-- MOBILE SLIDE MENU -->
+    <!-- MOBILE MENU -->
     <aside class="mobile-menu" id="mobileMenu">
-      <button class="close" id="closeMenu" aria-label="Close menu">×</button>
+      <button class="close" id="closeMenu">×</button>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
@@ -39,43 +32,65 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main class="about-main">
       <section class="about-layout">
-        <!-- LEFT: PHOTO -->
         <div class="about-photo">
-          <img src="profile-cutout.png" alt="Portrait of Kavitha" />
+          <img src="profile-cutout.png" alt="Kavitha Lingarajegowda" />
         </div>
 
-        <!-- RIGHT: CODE CARD -->
-        <div class="about-codecard" role="region" aria-label="About text">
+        <div class="about-codecard">
           <div class="codecard-topbar">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="codecard-title">about_me.txt</span>
+            <span class="codecard-title">ABOUT_ME.TXT</span>
           </div>
 
           <pre class="codecard-body"><code>
-<span class="line"><span class="ln">01</span><span class="kw">const</span> <span class="id">kavitha</span> = {</span>
-<span class="line"><span class="ln">02</span>  <span class="key">focus</span>: <span class="str">"Automotive Software Engineering"</span>,</span>
-<span class="line"><span class="ln">03</span>  <span class="key">currently</span>: <span class="str">"Building reliable systems — and a clean portfolio."</span>,</span>
-<span class="line"><span class="ln">04</span>  <span class="key">about</span>: <span class="str">"Short intro paragraphs go here (we’ll write this next)."</span></span>
-<span class="line"><span class="ln">05</span>};</span>
+01 const kavitha = {
+02   role: "Junior AI Engineer",
+03   focus: ["LLMs", "Evaluation Systems", "Applied AI"],
+04
+05   summary:
+06     "I design and operate end-to-end AI systems with a strong focus on
+07      large language models, evaluation pipelines, and production-ready
+08      machine learning workflows. My work bridges research and engineering,
+09      with an emphasis on reliability, reproducibility, and real-world impact.",
+10
+11   experience: [
+12     "Built an LLM-based grading and feedback system for 300+ real exam
+13      answers, achieving ~96% agreement with human evaluators.",
+14
+15     "Designed deterministic, agent-driven evaluation pipelines with
+16      fully auditable outputs and Retrieval-Augmented Generation grounded
+17      in lecture material and grading rubrics.",
+18
+19     "Analyzed LLM behavior across 600+ student responses, benchmarking
+20      foundation models such as DeepSeek, Mistral, and LLaMA-2 using
+21      structured metrics and error analysis."
+22   ],
+23
+24   engineering: [
+25     "Python-based data pipelines, ETL workflows, and feature engineering",
+26     "PyTorch, NLP, Hugging Face, LangChain, LangGraph",
+27     "Model evaluation, experiment tracking, CI/CD, and monitoring",
+28     "Cloud platforms: AWS, Azure, GCP"
+29   ],
+30
+31   mindset:
+32     "I value clean architecture, measurable evaluation, and systems that
+33      behave predictably under real constraints. I enjoy working at the
+34      intersection of software engineering and AI research."
+35 };
           </code></pre>
         </div>
       </section>
     </main>
 
-    <!-- JS: SAME AS HOME -->
     <script>
       const hamburger = document.getElementById("hamburger");
       const mobileMenu = document.getElementById("mobileMenu");
       const closeMenu = document.getElementById("closeMenu");
-
-      function closeMenuFn() {
-        mobileMenu.classList.remove("open");
-      }
 
       hamburger.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -83,21 +98,17 @@
       });
 
       closeMenu.addEventListener("click", () => {
-        closeMenuFn();
+        mobileMenu.classList.remove("open");
       });
 
       document.addEventListener("click", (e) => {
-        if (mobileMenu.classList.contains("open")) {
-          if (!mobileMenu.contains(e.target) && e.target !== hamburger) {
-            closeMenuFn();
-          }
+        if (
+          mobileMenu.classList.contains("open") &&
+          !mobileMenu.contains(e.target) &&
+          e.target !== hamburger
+        ) {
+          mobileMenu.classList.remove("open");
         }
-      });
-
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          closeMenuFn();
-        });
       });
     </script>
   </body>
