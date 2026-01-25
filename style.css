@@ -256,10 +256,6 @@ body::before {
   color: #f2f2f6;
 }
 
-/* =========================
-   MOBILE — FINAL, LOCKED, NO-SCROLL
-   ========================= */
-
 @media (max-width: 900px) {
 
   /* Hide desktop nav, show hamburger */
@@ -288,12 +284,16 @@ body::before {
     align-items: center;
     justify-content: flex-start;
     padding-top: 5.2rem;
+
+    /* 🔥 CRITICAL FIX */
+    padding-right: 0;   /* remove desktop offset */
+    padding-left: 0;
+
     text-align: center;
     position: relative;
     z-index: 2;
   }
 
-  /* FORCE true centering */
   body.home-page .hero-content {
     width: 100%;
     max-width: 360px;
@@ -301,16 +301,7 @@ body::before {
     z-index: 3;
   }
 
-  body.home-page .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  body.home-page .hero-content p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Photo — DO NOT CHANGE (already perfect) */
+  /* Photo unchanged */
   body.home-page .hero-image {
     position: fixed;
     bottom: 0;
@@ -328,8 +319,6 @@ body::before {
     display: block;
     height: 100%;
     width: auto;
-    margin: 0;
-    max-height: none;
   }
 
   /* =========================
@@ -352,11 +341,16 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    /* 🔥 CRITICAL FIX */
+    padding-left: 0;    /* remove desktop layout push */
+    padding-right: 0;
+
     gap: 1.6rem;
     z-index: 3;
   }
 
-  /* EDITOR — centered, wider, taller */
+  /* Editor — centered & readable */
   body.about-page .about-codecard {
     width: 92%;
     max-width: 420px;
@@ -364,18 +358,18 @@ body::before {
   }
 
   body.about-page .codecard-body {
-    height: 320px;          /* MORE ROOM */
+    height: 340px;   /* more room for text */
     font-size: 0.95rem;
     padding: 1.8rem;
   }
 
-  /* Photo — slightly smaller ONLY on About page */
+  /* Photo — smaller only on About */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 46svh;          /* smaller than home */
+    height: 46svh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -387,7 +381,5 @@ body::before {
     display: block;
     height: 100%;
     width: auto;
-    max-height: none;
-    margin: 0;
   }
 }
