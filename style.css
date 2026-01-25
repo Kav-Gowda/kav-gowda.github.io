@@ -167,40 +167,35 @@ body::before {
 }
 
 /* =========================
-   ABOUT PAGE (DESKTOP)
+   ABOUT PAGE (DESKTOP) — LOCKED VIEWPORT
    ========================= */
 
 .about-main {
-  min-height: 100vh;
-  padding: 5rem 6vw;
+  height: 100vh;              /* LOCK viewport */
+  overflow: hidden;           /* NO scrolling */
   display: flex;
   align-items: center;
 }
 
 .about-layout {
-  min-height: 100vh;  /* KEY FIX */
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1.35fr;
-  gap: 3.5rem;
   align-items: center;
+  gap: 3.5rem;
 }
 
-/* ✅ ONLY CHANGE: make About photo behave like Home photo */
-/* Make About page photo behave EXACTLY like Home page */
 .about-photo {
   display: flex;
   align-items: flex-end;      /* bottom */
   justify-content: flex-start;/* left */
-  height: 100%;               /* KEY FIX */
+  height: 100%;
 }
 
 .about-photo img {
-  height: 82vh;               /* same as Home */
-  max-height: 880px;          /* same as Home */
+  height: 82vh;               /* SAME AS HOME */
+  max-height: 880px;
   width: auto;
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.35)); /* same vibe as Home */
 }
 
 /* CODE EDITOR — RESTORED LOOK (dark editor + light text) */
