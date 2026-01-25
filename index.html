@@ -8,37 +8,44 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="nav-left">Kavitha</div>
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Resume</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-      </nav>
+    <!-- Mobile Side Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Resume</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </nav>
 
-      <button class="hamburger" aria-label="Menu">
-        ☰
-      </button>
-    </header>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Resume</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </nav>
 
-    <!-- HERO -->
+    <!-- Hero -->
     <main class="hero">
       <div class="hero-image">
-        <!-- IMPORTANT: use your cut-out PNG here -->
-        <img src="profile-cutout.png" alt="Kavitha Lingarajegowda" />
+        <img src="profile.png" alt="Kavitha Lingarajegowda" />
       </div>
 
       <div class="hero-content">
         <h1>Kavitha Lingarajegowda</h1>
-        <p>
-          Automotive Software Engineer · LLMs · Evaluation Systems
-        </p>
-        <a href="#about" class="cta-button">About me</a>
+        <p>Automotive Software Engineer · LLMs · Evaluation Systems</p>
+        <a href="#">About me</a>
       </div>
     </main>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+    </script>
   </body>
 </html>
