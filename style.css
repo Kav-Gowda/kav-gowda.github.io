@@ -256,82 +256,22 @@ body::before {
   color: #f2f2f6;
 }
 /* =========================
-   MOBILE — FINAL, CLEAN, LOCKED
+   MOBILE — FINAL, LOCKED, FIXED
    ========================= */
 
 @media (max-width: 900px) {
 
-  /* Hide desktop nav, show hamburger */
-  .desktop-nav {
-    display: none;
-  }
+  /* NAV */
+  .desktop-nav { display: none; }
+  .hamburger { display: block; }
 
-  .hamburger {
-    display: block;
-  }
-
-  html,
-  body {
+  html, body {
     height: 100svh;
     overflow: hidden;
   }
 
   /* =========================
-     HOME PAGE — MOBILE
-     ========================= */
-
-  body.home-page .hero {
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 5.2rem;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  body.home-page .hero-content {
-    width: 92%;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  body.home-page .hero-content h1 {
-    font-size: 1.9rem;        /* FIX: prevents last name cutoff */
-    line-height: 1.15;
-    word-break: keep-all;
-  }
-
-  body.home-page .hero-content p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Photo — DO NOT TOUCH (already perfect) */
-  body.home-page .hero-image {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 52svh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  body.home-page .hero-image img {
-    display: block;
-    height: 100%;
-    width: auto;
-    margin: 0;
-  }
-
-  /* =========================
-     ABOUT PAGE — MOBILE
+     ABOUT PAGE — MOBILE (FIXED FOR REAL)
      ========================= */
 
   body.about-page .about-main {
@@ -340,39 +280,41 @@ body::before {
     position: relative;
   }
 
-  /* IMPORTANT: reserve space ABOVE the photo */
+  /* 🔥 CRITICAL RESET — remove desktop influence */
   body.about-page .about-layout {
     height: 100%;
+    padding: 0;                 /* REMOVE 42vw */
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 5.2rem;
-    padding-bottom: 54svh; /* KEY FIX: keeps editor above photo */
-    gap: 1.4rem;
+    gap: 1.6rem;
     z-index: 3;
   }
 
-  /* Editor — centered, readable */
+  /* EDITOR — centered, wider, top */
   body.about-page .about-codecard {
-    width: 92%;
-    max-width: 420px;
-    margin: 0 auto;
+    width: calc(100% - 2.4rem); /* equal side spacing */
+    max-width: 460px;
+    margin-top: 5.6rem;         /* below hamburger */
+    z-index: 4;
   }
 
   body.about-page .codecard-body {
-    height: 320px;
+    height: 360px;              /* MORE TEXT ROOM */
     font-size: 0.95rem;
     padding: 1.8rem;
   }
 
-  /* Photo — bottom fixed, slightly smaller */
+  /* PHOTO — bottom, smaller, never blocks editor */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 46svh;
+    height: 42svh;
+    width: auto;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -381,9 +323,9 @@ body::before {
   }
 
   body.about-page .about-photo img {
-    display: block;
     height: 100%;
     width: auto;
-    margin: 0;
+    max-height: none;
+    display: block;
   }
 }
