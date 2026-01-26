@@ -256,6 +256,7 @@ body::before {
   color: #f2f2f6;
   overflow-y: auto;
   text-align: left; /*  FIX: aligns first line with others on laptop */
+  text-indent: 0;
 }
 /* =========================
    MOBILE — FINAL, SAFE, ISOLATED
