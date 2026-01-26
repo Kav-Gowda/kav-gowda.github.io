@@ -115,21 +115,31 @@
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         pdf.getPage(pageNum).then(page => {
 
-          // Get container width
           const containerWidth = container.clientWidth;
 
-          // Get PDF page at scale = 1
+          // Base viewport
           const unscaledViewport = page.getViewport({ scale: 1 });
 
-          // Calculate scale to fit width
+          // Fit-to-width scale
           const scale = containerWidth / unscaledViewport.width;
-          const viewport = page.getViewport({ scale });
+
+          // High-DPI handling
+          const outputScale = window.devicePixelRatio || 1;
+
+          const viewport = page.getViewport({
+            scale: scale * outputScale
+          });
 
           const canvas = document.createElement("canvas");
           const context = canvas.getContext("2d");
 
+          // Set actual pixel size
           canvas.width = viewport.width;
           canvas.height = viewport.height;
+
+          // Set CSS size (what the user sees)
+          canvas.style.width = `${viewport.width / outputScale}px`;
+          canvas.style.height = `${viewport.height / outputScale}px`;
 
           container.appendChild(canvas);
 
@@ -141,4 +151,5 @@
       }
     });
   </script>
+
 
