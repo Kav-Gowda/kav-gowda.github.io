@@ -286,6 +286,10 @@ body::before {
     overflow-y: auto; /* allow scroll, prevents clipping */
   }
 
+  body.portfolio-page {
+    overflow-y: auto;
+  }
+
   body.home-page .hero {
     min-height: 100svh;
     display: flex;
