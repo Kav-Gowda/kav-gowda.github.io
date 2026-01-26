@@ -56,16 +56,20 @@
 
     .contact-label {
       font-size: 14px;
-      color: #666;
-      margin-bottom: 8px;
+      color: #777;
+      margin-bottom: 10px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
+    /* FIX: readable Aa-style links */
     .contact-link {
       font-size: 18px;
       color: #111;
       text-decoration: none;
+      font-weight: 500;
+      letter-spacing: normal;
+      text-transform: none;
       word-break: break-word;
     }
 
@@ -73,10 +77,12 @@
       text-decoration: underline;
     }
 
+    /* FIX: clearer, lighter paragraph */
     .contact-note {
       margin-top: 40px;
       font-size: 15px;
       color: #333;
+      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -142,7 +148,8 @@
       </div>
 
       <div class="contact-note">
-        Based in Germany · Open to full-time roles, internships, and research opportunities
+        Based in Germany ·<br />
+        Open to full-time roles and research opportunities
       </div>
 
     </div>
