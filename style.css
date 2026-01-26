@@ -254,6 +254,7 @@ body::before {
   line-height: 1.6; /* slightly tighter for better start */
   white-space: pre-wrap;
   color: #f2f2f6;
+  overflow-y: auto;  
 }
 /* =========================
    MOBILE — FINAL, SAFE, ISOLATED
@@ -368,6 +369,7 @@ body::before {
     text-align: left;        /* FIX: no centering */
     padding-left: 1.6rem;
     padding-right: 1.6rem;
+    padding-bottom: 5rem;
   }
 
   body.about-page #typewriter {
