@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background-image: url("background2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        background-attachment: scroll;
+      }
+    }
+
+    main.contact-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 160px 16px 96px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: 36px;
+      margin-bottom: 64px;
+      color: #6b5ca5;
+    }
+
+    .contact-block {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-item {
+      margin-bottom: 32px;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .contact-link {
+      font-size: 18px;
+      color: #111;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      margin-top: 40px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      main.contact-page {
+        padding-top: 140px;
+      }
+
+      .contact-block {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <aside class="mobile-menu" id="mobileMenu">
+    <button class="close" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </aside>
+
+  <!-- Desktop navigation -->
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="contact-page">
+    <h1>Contact</h1>
+
+    <div class="contact-block">
+
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <a
+          class="contact-link"
+          href="mailto:kavitha.lingarajegowda99@gmail.com"
+        >
+          kavitha.lingarajegowda99@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <a
+          class="contact-link"
+          href="https://www.linkedin.com/in/kavitha-lingarajegowda/"
+          target="_blank"
+          rel="noopener"
+        >
+          linkedin.com/in/kavitha-lingarajegowda
+        </a>
+      </div>
+
+      <div class="contact-note">
+        Based in Germany · Open to full-time roles, internships, and research opportunities
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("open");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu.classList.contains("open") &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== hamburger
+      ) {
+        mobileMenu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
