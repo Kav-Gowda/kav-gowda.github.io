@@ -362,9 +362,16 @@ body::before {
     margin: 0 auto;
   }
 
+/* ABOUT PAGE — MOBILE — SCROLLABLE EDITOR */
   body.about-page .codecard-body {
-    height: 340px;           /* readable on mobile */
+    height: 42svh;              /* gives more vertical room */
+    max-height: 42svh;
+    overflow-y: auto;           /* ENABLE editor scroll */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
     font-size: 0.95rem;
+    line-height: 1.6;
     padding: 1.8rem;
   }
 
