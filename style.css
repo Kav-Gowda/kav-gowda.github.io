@@ -258,6 +258,11 @@ body::before {
   text-align: left; /*  FIX: aligns first line with others on laptop */
   text-indent: 0;
 }
+/* FIX: ensure first typed line is flush-left on desktop */
+#typewriter {
+  display: block;
+}
+
 /* =========================
    MOBILE — FINAL, SAFE, ISOLATED
    ========================= */
