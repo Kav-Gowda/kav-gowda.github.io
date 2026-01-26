@@ -248,13 +248,14 @@ body::before {
 /* BODY — stable typing */
 .codecard-body {
   height: 500px; /* ↑ taller on laptop */
-  padding: 1.4rem 2.2rem 2.2rem; /* ↓ reduced top padding */
+  padding: 0.9rem 2.2rem 2.2rem; /* 🔧 pull text up by ~1 line */
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1rem;
-  line-height: 1.6; /* slightly tighter for better start */
+  line-height: 1.6;
   white-space: pre-wrap;
   color: #f2f2f6;
-  overflow-y: auto;  
+  overflow-y: auto;
+  text-align: left; /* 🔧 FIX: aligns first line with others on laptop */
 }
 /* =========================
    MOBILE — FINAL, SAFE, ISOLATED
