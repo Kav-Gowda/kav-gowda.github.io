@@ -62,7 +62,7 @@
     /* PDF wrapper */
     .resume-frame-wrapper {
       width: 100%;
-      max-width: 900px; /* feels like a real document */
+      max-width: 900px;
       height: 100%;
       background-color: #ffffff;
     }
@@ -73,8 +73,48 @@
       border: none;
     }
 
-    /* Mobile tuning */
+    /* Desktop / Mobile visibility */
+    .desktop-only {
+      display: block;
+      height: 100%;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
+    /* Mobile fallback */
+    .resume-mobile-fallback {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #333;
+      padding: 24px;
+    }
+
+    .open-btn {
+      margin-top: 16px;
+      padding: 12px 20px;
+      border: 1px solid #000;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+    }
+
+    /* Mobile behavior */
     @media (max-width: 768px) {
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: flex;
+      }
+
       .resume-frame-wrapper {
         max-width: 100%;
       }
@@ -83,6 +123,7 @@
 </head>
 
 <body>
+
   <!-- Header with Download button -->
   <div class="resume-header">
     <a
@@ -97,11 +138,30 @@
   <!-- Resume viewer -->
   <div class="resume-container">
     <div class="resume-frame-wrapper">
+
+      <!-- Desktop / Laptop -->
       <iframe
         src="Kavitha_Lingarajegowda_Resume_2026.pdf"
-        title="Resume PDF"
+        title="Kavitha Lingarajegowda Resume"
+        loading="lazy"
+        class="desktop-only"
       ></iframe>
+
+      <!-- Mobile fallback -->
+      <div class="mobile-only resume-mobile-fallback">
+        <p>Your resume will open in full screen.</p>
+        <a
+          href="Kavitha_Lingarajegowda_Resume_2026.pdf"
+          class="open-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          Open Resume
+        </a>
+      </div>
+
     </div>
   </div>
+
 </body>
 </html>
