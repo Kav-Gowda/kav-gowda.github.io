@@ -213,7 +213,7 @@ body::before {
 /* CODE EDITOR */
 .about-codecard {
   width: 100%;
-  max-width: 600px; /* ↑ increased from 520px */
+  max-width: 650px; /* ↑ increased from 520px */
   background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
@@ -247,7 +247,7 @@ body::before {
 
 /* BODY — stable typing */
 .codecard-body {
-  height: 420px; /* ↑ taller on laptop */
+  height: 500px; /* ↑ taller on laptop */
   padding: 1.4rem 2.2rem 2.2rem; /* ↓ reduced top padding */
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1rem;
