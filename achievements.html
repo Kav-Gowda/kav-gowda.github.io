@@ -81,12 +81,20 @@
       margin-bottom: 16px;
     }
 
+    /* PDF link: visible on laptop only */
     .pdf-link {
       display: inline-block;
       margin-top: 8px;
       font-size: 14px;
       color: #6b5ca5;
       text-decoration: underline;
+    }
+
+    /* Hide PDF link on phone & tablet */
+    @media (max-width: 1023px) {
+      .pdf-link {
+        display: none;
+      }
     }
 
     @media (max-width: 768px) {
