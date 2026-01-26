@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achievements</title>
+
+    <!-- Reuse global styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background-image: url("background2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      main.achievements-page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 120px 16px 64px;
+        text-align: center;
+      }
+
+      main.achievements-page h1 {
+        margin-bottom: 56px;
+        font-size: 36px;
+      }
+
+      .month-section {
+        margin-bottom: 72px;
+      }
+
+      .month-title {
+        font-family: "Cinzel", serif;
+        font-size: 22px;
+        color: #6b5ca5; /* dark lavender */
+        letter-spacing: 1px;
+        margin-bottom: 28px;
+      }
+
+      /* Placeholder area for next steps */
+      .month-content {
+        height: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Navigation (IDENTICAL to index.html) ===== -->
+
+    <button class="hamburger" id="hamburger">☰</button>
+
+    <aside class="mobile-menu" id="mobileMenu">
+      <button class="close" id="closeMenu">×</button>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="contact.html">Contact</a>
+    </aside>
+
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- ===== Page Content ===== -->
+
+    <main class="achievements-page">
+      <h1>Achievements</h1>
+
+      <section class="month-section">
+        <div class="month-title">December 2025</div>
+        <div class="month-content"></div>
+      </section>
+
+      <section class="month-section">
+        <div class="month-title">October 2025</div>
+        <div class="month-content"></div>
+      </section>
+
+      <section class="month-section">
+        <div class="month-title">September 2025</div>
+        <div class="month-content"></div>
+      </section>
+    </main>
+
+    <!-- ===== Navigation JS (IDENTICAL to index.html) ===== -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeMenu = document.getElementById("closeMenu");
+
+      hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle("open");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          mobileMenu.classList.contains("open") &&
+          !mobileMenu.contains(e.target) &&
+          e.target !== hamburger
+        ) {
+          mobileMenu.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
+</html>
