@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Achievements</title>
 
-    <!-- Reuse global styles -->
+    <!-- Global site styles -->
     <link rel="stylesheet" href="style.css" />
 
     <style>
@@ -21,20 +21,25 @@
         background-attachment: fixed;
       }
 
+      /* Page wrapper */
       main.achievements-page {
         max-width: 900px;
         margin: 0 auto;
-        padding: 120px 16px 64px;
+        padding: 140px 16px 80px; /* space for nav + bottom scroll */
         text-align: center;
       }
 
+      /* Page title */
       main.achievements-page h1 {
-        margin-bottom: 56px;
+        font-family: "Cinzel", serif;
         font-size: 36px;
+        margin-bottom: 64px;
+        color: #6b5ca5; /* dark lavender */
       }
 
+      /* Month sections */
       .month-section {
-        margin-bottom: 72px;
+        margin-bottom: 96px; /* prevents overlap */
       }
 
       .month-title {
@@ -42,30 +47,26 @@
         font-size: 22px;
         color: #6b5ca5; /* dark lavender */
         letter-spacing: 1px;
-        margin-bottom: 28px;
+        margin-bottom: 36px;
       }
 
-      /* Placeholder area for next steps */
-      .month-content {
-        height: 40px;
-      }
-      
+      /* Achievement card */
       .achievement-card {
         max-width: 560px;
         margin: 0 auto;
-        padding: 24px;
+        padding: 28px;
         background: rgba(255, 255, 255, 0.96);
-        border-radius: 16px;
+        border-radius: 18px;
         border: 1px solid rgba(0, 0, 0, 0.08);
       }
 
       .achievement-card h3 {
-        margin: 0 0 6px;
+        margin: 0 0 8px;
         font-size: 18px;
       }
 
       .achievement-meta {
-        margin: 0 0 12px;
+        margin: 0 0 14px;
         font-size: 13px;
         color: rgba(0, 0, 0, 0.65);
       }
@@ -73,7 +74,7 @@
       .achievement-learned {
         font-size: 14px;
         line-height: 1.6;
-        margin-bottom: 18px;
+        margin-bottom: 22px;
       }
 
       .certificate-image {
@@ -81,11 +82,10 @@
         max-width: 320px;
         display: block;
         margin: 0 auto;
-        border-radius: 10px;
+        border-radius: 12px;
         border: 1px solid rgba(0, 0, 0, 0.1);
         background: #fff;
       }
-
     </style>
   </head>
 
@@ -116,40 +116,37 @@
     <main class="achievements-page">
       <h1>Achievements</h1>
 
+      <!-- December 2025 -->
       <section class="month-section">
         <div class="month-title">December 2025</div>
-        <div class="month-content">
-          <article class="achievement-card">
-            <h3>SAP Certified – SAP Generative AI Developer</h3>
 
-            <p class="achievement-meta">SAP Certification</p>
+        <article class="achievement-card">
+          <h3>SAP Certified – SAP Generative AI Developer</h3>
+          <div class="achievement-meta">SAP Certification</div>
+          <p class="achievement-learned">
+            Built a strong understanding of enterprise-grade Generative AI
+            development, including SAP Business AI, AI Core, and
+            production-ready GenAI workflows.
+          </p>
 
-            <p class="achievement-learned">
-            Built a strong understanding of enterprise-grade Generative AI development,
-            including SAP Business AI, AI Core, and production-ready GenAI workflows.
-            </p>
-
-            <a href="Achievements/sap-generative-ai-developer-certificate.pdf">
-              <img
-                src="Achievements/sap-generative-ai-developer-badge.png"
-                alt="SAP Generative AI Developer Certificate"
-                class="certificate-image"
-              />
-            </a>
-          </article>
-          
-        </div>
-
+          <a href="Achievements/sap-generative-ai-developer-certificate.pdf">
+            <img
+              src="Achievements/sap-generative-ai-developer-badge.png"
+              alt="SAP Generative AI Developer Certificate"
+              class="certificate-image"
+            />
+          </a>
+        </article>
       </section>
 
+      <!-- October 2025 -->
       <section class="month-section">
         <div class="month-title">October 2025</div>
-        <div class="month-content"></div>
       </section>
 
+      <!-- September 2025 -->
       <section class="month-section">
         <div class="month-title">September 2025</div>
-        <div class="month-content"></div>
       </section>
     </main>
 
