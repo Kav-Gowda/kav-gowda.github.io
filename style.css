@@ -357,22 +357,23 @@ body::before {
 
   /* ✅ EDITOR — FULL WIDTH, CENTERED */
   body.about-page .about-codecard {
-    width: calc(100vw - 2.4rem);  /* equal space left + right */
-    max-width: 440px;
+    width: 94%;
+    max-width: none;
     margin: 0 auto;
   }
 
-/* ABOUT PAGE — MOBILE — SCROLLABLE EDITOR */
   body.about-page .codecard-body {
-    height: 42svh;              /* gives more vertical room */
-    max-height: 42svh;
-    overflow-y: auto;           /* ENABLE editor scroll */
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
+    height: 60svh;
+    overflow-y: auto;        /* allow scroll inside editor */
+    text-align: left;        /* FIX: no centering */
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 1.8rem;
+  body.about-page #typewriter {
+    display: block;
+    white-space: pre-wrap;
+    text-align: left;        /* FIX: Hello aligns left */
   }
 
   /* ✅ PHOTO — FIXED AT BOTTOM, SMALLER */
