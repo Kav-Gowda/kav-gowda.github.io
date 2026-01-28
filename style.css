@@ -246,12 +246,15 @@ main {
 /* CODE EDITOR */
 .about-codecard {
   width: 100%;
-  max-width: 650px; /* ↑ increased from 520px */
+  max-width: 650px;
   background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+
+  margin-top: -40px; /* 🔧 vertical optical alignment fix */
 }
+
 
 /* TOP BAR */
 .codecard-topbar {
