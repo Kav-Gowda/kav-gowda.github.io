@@ -33,16 +33,25 @@ body::before {
 }
 
 /* =========================
-   NAVIGATION (GLOBAL)
+   NAVIGATION (GLOBAL) — FIXED
    ========================= */
 
 .desktop-nav {
-  position: absolute;
-  top: 2rem;
-  right: 4rem;
+  position: fixed;                 /* FIX 1 */
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 72px;                    /* FIX 1 */
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 2.6rem;
-  z-index: 50;
+  padding-right: 4rem;
+
+  background: rgba(255, 255, 255, 0.85); /* FIX 1 */
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.08); /* FIX 3 */
+  z-index: 100;
 }
 
 .desktop-nav a {
@@ -73,6 +82,13 @@ body.contact-page .desktop-nav a[href="contact.html"] {
   text-underline-offset: 6px;
 }
 
+/* =========================
+   GLOBAL CONTENT OFFSET (CRITICAL)
+   ========================= */
+
+main {
+  padding-top: 120px; /* FIX 2 — nav height + breathing room */
+}
 
 /* =========================
    MOBILE NAV
