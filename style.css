@@ -58,6 +58,23 @@ body::before {
 }
 
 /* =========================
+   ACTIVE NAV STATE (DESKTOP ONLY)
+   ========================= */
+
+body.home-page .desktop-nav a[href="index.html"],
+body.about-page .desktop-nav a[href="about.html"],
+body.resume-page .desktop-nav a[href="resume.html"],
+body.portfolio-page .desktop-nav a[href="portfolio.html"],
+body.achievements-page .desktop-nav a[href="achievements.html"],
+body.contact-page .desktop-nav a[href="contact.html"] {
+  font-weight: 700;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+
+/* =========================
    MOBILE NAV
    ========================= */
 
