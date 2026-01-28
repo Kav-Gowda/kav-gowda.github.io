@@ -312,6 +312,11 @@ main {
   html, body {
     height: 100svh;
     overflow: hidden;
+
+  /* MOBILE ABOUT — remove photo entirely */
+  body.about-page .about-photo {
+    display: none;
+  }
   }
 
   /* =========================
@@ -399,7 +404,7 @@ main {
     justify-content: flex-start;
     gap: 1.2rem;
     padding-top: 4.8rem;
-    padding-bottom: 48svh;       /* reserve space for fixed photo */
+    padding-bottom: 2rem;       /* reserve space for fixed photo */
     box-sizing: border-box;
     z-index: 3;
   }
@@ -413,7 +418,7 @@ main {
   }
 
   body.about-page .codecard-body {
-    height: 60svh;
+    height: calc(100svh - 10rem);
     overflow-y: auto;
     text-align: left;
     padding-left: 1.6rem;
