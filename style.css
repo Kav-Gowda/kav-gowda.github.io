@@ -12,11 +12,11 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Cinzel", serif;
-  overflow-x: hidden; /* prevents mobile horizontal zoom/shift */
+  overflow-x: hidden;
 }
 
 /* =========================
-   GLOBAL BACKGROUND (ALL PAGES)
+   GLOBAL BACKGROUND
    ========================= */
 
 body {
@@ -33,29 +33,28 @@ body::before {
 }
 
 /* =========================
-   NAVIGATION (GLOBAL) — FIXED
+   DESKTOP NAV — FIXED
    ========================= */
 
 .desktop-nav {
-  position: fixed;                 /* FIX 1 */
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  height: 72px;                    /* FIX 1 */
+  height: 72px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 2.6rem;
   padding-right: 4rem;
-
-  background: rgba(255, 255, 255, 0.85); /* FIX 1 */
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(0,0,0,0.08); /* FIX 3 */
+  border-bottom: 1px solid rgba(0,0,0,0.08);
   z-index: 100;
 }
 
 .desktop-nav a {
-  color: #5b4b8a; /* lavender */
+  color: #5b4b8a;
   text-decoration: none;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
@@ -66,10 +65,7 @@ body::before {
   opacity: 0.75;
 }
 
-/* =========================
-   ACTIVE NAV STATE (DESKTOP ONLY)
-   ========================= */
-
+/* ACTIVE NAV STATE */
 body.home-page .desktop-nav a[href="index.html"],
 body.about-page .desktop-nav a[href="about.html"],
 body.resume-page .desktop-nav a[href="resume.html"],
@@ -77,17 +73,13 @@ body.portfolio-page .desktop-nav a[href="portfolio.html"],
 body.achievements-page .desktop-nav a[href="achievements.html"],
 body.contact-page .desktop-nav a[href="contact.html"] {
   font-weight: 700;
-  opacity: 1;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
-/* =========================
-   GLOBAL CONTENT OFFSET (CRITICAL)
-   ========================= */
-
+/* GLOBAL OFFSET FOR FIXED NAV */
 main {
-  padding-top: 120px; /* FIX 2 — nav height + breathing room */
+  padding-top: 120px;
 }
 
 /* =========================
@@ -126,9 +118,7 @@ main {
   z-index: 55;
 }
 
-.mobile-menu.open {
-  left: 0;
-}
+.mobile-menu.open { left: 0; }
 
 .mobile-menu .close {
   position: absolute;
@@ -151,7 +141,7 @@ main {
 }
 
 /* =========================
-   HOME HERO (DESKTOP)
+   HOME HERO
    ========================= */
 
 .hero {
@@ -163,53 +153,16 @@ main {
   padding-right: 4rem;
 }
 
-.hero-image {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-}
-
-.hero-image img {
-  height: 82vh;
-  max-height: 880px;
-  width: auto;
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.35));
-}
-
-.hero-content h1 {
-  font-size: 3.4rem;
-  margin-bottom: 0.8rem;
-  color: #4a3b78; /* dark lavender */
-}
-
-.hero-content p {
-  font-size: 1.05rem;
-  font-style: italic;
-  margin-bottom: 1.8rem;
-  color: #5b4b8a;
-}
-
-.cta {
-  display: inline-block;
-  padding: 0.75rem 2.2rem;
-  border-radius: 999px;
-  background: rgba(235, 230, 250, 0.95);
-  color: #1a1a1a;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 /* =========================
-   ABOUT PAGE (DESKTOP) — FINAL & CORRECT
+   ABOUT PAGE — DESKTOP (FIXED)
    ========================= */
 
 .about-main {
-  height: 100vh;
+  height: calc(100vh - 72px); /* FIX 1 */
   overflow: hidden;
   position: relative;
 }
 
-/* PHOTO — flush left, bottom aligned, viewport-anchored */
 .about-photo {
   position: fixed;
   bottom: 0;
@@ -224,85 +177,49 @@ main {
 }
 
 .about-photo img {
-  height: 82vh;                /* EXACT Home size */
+  height: 82vh;
   max-height: 880px;
   width: auto;
-  filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.28));
 }
 
-/* CONTENT — pushed right, never overlaps */
 .about-layout {
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 6vw;
-  padding-left: 42vw;          /* reserves space for photo */
+  padding-left: 42vw;
   box-sizing: border-box;
   position: relative;
   z-index: 2;
 }
 
-/* CODE EDITOR */
 .about-codecard {
   width: 100%;
-  max-width: 650px; /* ↑ increased from 520px */
+  max-width: 650px;
   background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
 }
 
-/* TOP BAR */
-.codecard-topbar {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.9rem 1.2rem;
-  background: rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.codecard-topbar .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-}
-
-.codecard-title {
-  margin-left: auto;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  opacity: 0.7;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* BODY — stable typing */
 .codecard-body {
-  height: 500px; /* ↑ taller on laptop */
-  padding: 0.9rem 2.2rem 2.2rem; /* 🔧 pull text up by ~1 line */
+  height: 500px;
+  padding: 0.9rem 2.2rem 2.2rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1rem;
   line-height: 1.6;
   white-space: pre-wrap;
   color: #f2f2f6;
   overflow-y: auto;
-  text-align: left; /*  FIX: aligns first line with others on laptop */
-  text-indent: 0;
-}
-/* FIX: ensure first typed line is flush-left on desktop */
-#typewriter {
-  display: block;
 }
 
 /* =========================
-   MOBILE — FINAL, SAFE, ISOLATED
+   MOBILE FIXES (ONLY ABOUT PAGE)
    ========================= */
 
 @media (max-width: 900px) {
 
-  /* NAV */
   .desktop-nav { display: none; }
   .hamburger { display: block; }
 
@@ -311,135 +228,37 @@ main {
     overflow: hidden;
   }
 
-  /* =========================
-     HOME PAGE — MOBILE (SAFE)
-     ========================= */
-
-  body.home-page {
-    overflow-y: auto; /* allow scroll, prevents clipping */
-  }
-
-  body.portfolio-page {
-    overflow-y: auto;
-  }
-
-  body.home-page .hero {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 5.2rem;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  body.home-page .hero-content {
-    width: 90%;
-    max-width: 360px;
-    margin: 0 auto;
-    z-index: 3;
-  }
-
-  body.home-page .hero-content h1 {
-    font-size: 1.85rem; /* prevents name clipping */
-    line-height: 1.15;
-  }
-
-  body.home-page .hero-content p {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Home photo — unchanged, safe */
-  body.home-page .hero-image {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 52svh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  body.home-page .hero-image img {
-    display: block;
-    height: 100%;
-    width: auto;
-    max-height: none;
-    margin: 0;
-  }
-
-  /* =========================
-     ABOUT PAGE — MOBILE (FIXED)
-     ========================= */
-
   body.about-page .about-main {
-    height: 100svh;
-    overflow: hidden;
+    min-height: 100svh;      /* FIX 2 */
+    overflow-y: auto;
     position: relative;
   }
 
-  /* 🔴 KILL DESKTOP LAYOUT COMPLETELY */
   body.about-page .about-layout {
-    height: 100%;
-    width: 100%;
-    padding: 0;              /* 🔥 removes 42vw desktop padding */
-    margin: 0;
+    padding-top: 4.8rem;
+    padding-left: 0;
+    padding-right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1.2rem;
-    padding-top: 4.8rem;     /* space below nav */
-    box-sizing: border-box;
-    z-index: 3;
   }
 
-  /* ✅ EDITOR — FULL WIDTH, CENTERED */
   body.about-page .about-codecard {
     width: 94%;
-    max-width: none;
-    margin: 0 auto;
+    z-index: 4;              /* FIX 3 */
   }
 
   body.about-page .codecard-body {
     height: 60svh;
-    overflow-y: auto;        /* allow scroll inside editor */
-    text-align: left;        /* FIX: no centering */
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
     padding-bottom: 5rem;
   }
 
-  body.about-page #typewriter {
-    display: block;
-    white-space: pre-wrap;
-    text-align: left;        /* FIX: Hello aligns left */
-  }
-
-  /* ✅ PHOTO — FIXED AT BOTTOM, SMALLER */
   body.about-page .about-photo {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 46svh;           /* reduced so editor fits */
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    height: 46svh;
     z-index: 1;
-    pointer-events: none;
-  }
-
-  body.about-page .about-photo img {
-    height: 100%;
-    width: auto;
-    display: block;
-    margin: 0;
   }
 }
