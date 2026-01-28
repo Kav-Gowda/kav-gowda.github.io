@@ -194,6 +194,54 @@
       <div class="divider"></div>
 
     </section>
+    <section class="portfolio-section">
+      <h2>Document & Web RAG Q&amp;A (Open-Source LLM)</h2>
+      <p class="subtitle">
+        An interactive Retrieval-Augmented Generation demo that answers questions grounded in uploaded PDFs/DOCX, pasted text, or a web URL.
+      </p>
+
+      <h3>Context</h3>
+      <p>
+        Independent project built end-to-end and deployed as a live demo. Focused on practical AI engineering: retrieval, grounding, and user-facing interaction.
+      </p>
+
+      <h3>Problem</h3>
+      <p>
+        LLMs can produce confident but incorrect answers when they don’t have access to up-to-date or private information. I wanted a system that can
+        reliably answer questions using <em>only</em> user-provided sources (documents or web pages), with clear grounding in retrieved context.
+      </p>
+
+      <h3>Approach</h3>
+      <ul>
+        <li><strong>Ingestion:</strong> Accepts PDF/DOCX uploads, raw text input, or a web link and extracts clean text for indexing.</li>
+        <li><strong>Chunking:</strong> Splits text into overlapping chunks to preserve context and improve retrieval recall.</li>
+        <li><strong>Embeddings + Vector Search:</strong> Generates sentence embeddings and stores them in a FAISS vector index for fast similarity search.</li>
+        <li><strong>Retrieval-Augmented Answering:</strong> Retrieves the most relevant chunks and answers strictly from that context to reduce hallucinations.</li>
+        <li><strong>Frontend:</strong> Deployed as a Gradio web app on Hugging Face Spaces for a simple, user-friendly demo workflow.</li>
+      </ul>
+
+      <h3>Impact</h3>
+      <ul>
+        <li>Delivers grounded Q&amp;A over user-provided documents and web content without requiring paid APIs.</li>
+        <li>Provides a live, interactive demo suitable for recruiter review (upload → ask → answer).</li>
+        <li>Demonstrates end-to-end AI system building: data ingestion, retrieval, and production-style deployment.</li>
+      </ul>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>RAG system design (chunking strategies, retrieval, grounding)</li>
+        <li>Vector databases / similarity search (FAISS)</li>
+        <li>Embeddings (Sentence Transformers)</li>
+        <li>LLM integration and safe answer constraints</li>
+        <li>Deployment and MLOps fundamentals (Hugging Face Spaces)</li>
+      </ul>
+
+      <p>
+        <a href="YOUR_HF_SPACE_LINK_HERE" target="_blank" rel="noopener noreferrer">
+          Live Demo (Hugging Face Space)
+        </a>
+      </p>
+    </section>
 
     <!-- Independent projects will go BELOW this later -->
     <!-- Master’s thesis will go ABOVE this later -->
