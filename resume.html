@@ -8,6 +8,8 @@
   <!-- PDF.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
+  <link rel="stylesheet" href="style.css" />
+
   <style>
     /* Page reset */
     html, body {
@@ -22,7 +24,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* Fixed top bar */
+    /* Fixed resume header (download only) */
     .resume-header {
       position: fixed;
       top: 0;
@@ -35,7 +37,7 @@
       align-items: center;
       justify-content: flex-end;
       padding: 0 16px;
-      z-index: 10;
+      z-index: 40;
     }
 
     .download-btn {
@@ -83,9 +85,30 @@
   </style>
 </head>
 
-<body>
+<body class="resume-page">
 
-  <!-- Header -->
+  <!-- Mobile nav -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <aside class="mobile-menu" id="mobileMenu">
+    <button class="close" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </aside>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Resume header -->
   <div class="resume-header">
     <a
       href="Kavitha_Lingarajegowda_Resume_2026.pdf"
@@ -116,14 +139,8 @@
         pdf.getPage(pageNum).then(page => {
 
           const containerWidth = container.clientWidth;
-
-          // Base viewport
           const unscaledViewport = page.getViewport({ scale: 1 });
-
-          // Fit-to-width scale
           const scale = containerWidth / unscaledViewport.width;
-
-          // High-DPI handling
           const outputScale = window.devicePixelRatio || 1;
 
           const viewport = page.getViewport({
@@ -133,11 +150,9 @@
           const canvas = document.createElement("canvas");
           const context = canvas.getContext("2d");
 
-          // Set actual pixel size
           canvas.width = viewport.width;
           canvas.height = viewport.height;
 
-          // Set CSS size (what the user sees)
           canvas.style.width = `${viewport.width / outputScale}px`;
           canvas.style.height = `${viewport.height / outputScale}px`;
 
@@ -152,4 +167,30 @@
     });
   </script>
 
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
 
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("open");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu.classList.contains("open") &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== hamburger
+      ) {
+        mobileMenu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
