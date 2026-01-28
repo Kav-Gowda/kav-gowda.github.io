@@ -2,48 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Global styles -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* =========================
+       PAGE LAYOUT
+       ========================= */
+
+    body.portfolio-page {
+      overflow-y: auto;
+    }
+
     main.portfolio-page {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 140px 16px 96px;
-      text-align: center;
+      padding: 160px 20px 120px; /* space below fixed nav */
     }
 
-    /* Page heading (outside card) */
-    h1 {
+    /* =========================
+       SECTION STYLES
+       ========================= */
+
+    .portfolio-section {
+      margin-bottom: 120px;
+    }
+
+    .portfolio-section h2 {
       font-family: "Cinzel", serif;
-      font-size: 36px;
-      margin-bottom: 72px;
-      color: #6b5ca5;
+      font-size: 34px;
+      color: #4a3b78;
+      margin-bottom: 12px;
     }
 
-    .portfolio-card {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 48px 32px;
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.1);
+    .portfolio-section .subtitle {
+      font-size: 15px;
+      font-style: italic;
+      color: #5b4b8a;
+      margin-bottom: 40px;
     }
 
-    .portfolio-card p {
+    .portfolio-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 12px;
+      color: #2b2b2b;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .portfolio-section p {
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: #2b2b2b;
       margin-bottom: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .portfolio-status {
-      margin-top: 32px;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      color: #6b5ca5;
+    .portfolio-section ul {
+      margin-left: 20px;
+      margin-top: 12px;
+    }
+
+    .portfolio-section li {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .divider {
+      margin-top: 64px;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 768px) {
+      main.portfolio-page {
+        padding: 120px 16px 96px;
+      }
+
+      .portfolio-section h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -71,30 +122,87 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- =========================
+       PORTFOLIO CONTENT
+       ========================= -->
+
   <main class="portfolio-page">
-    <h1>Portfolio</h1>
 
-    <div class="portfolio-card">
-      <p>
-        I am currently building and refining projects focused on
-        Artificial Intelligence, Machine Learning, and Generative AI systems.
-      </p>
+    <!-- =========================
+         RESEARCH INTERNSHIP
+         ========================= -->
 
-      <p>
-        Several projects are part of ongoing research, experimentation,
-        and my Master’s thesis work.
-      </p>
+    <section class="portfolio-section">
 
-      <p>
-        This section will be updated soon with detailed case studies,
-        technical write-ups, and implementations.
-      </p>
-
-      <div class="portfolio-status">
-        — Work in progress —
+      <h2>Research Internship</h2>
+      <div class="subtitle">
+        LLM-based grading and feedback analysis for AI and Computer Vision exams
       </div>
-    </div>
+
+      <h3>Context</h3>
+      <p>
+        This research internship focused on evaluating the feasibility of using
+        Large Language Models (LLMs) for automated grading and feedback generation
+        in university-level technical exams, particularly in Artificial Intelligence,
+        Computer Vision, and LLM-related coursework.
+      </p>
+
+      <h3>Problem Statement</h3>
+      <p>
+        Manual grading of open-ended technical exams is time-consuming,
+        subjective, and difficult to scale. The core challenge was to assess
+        whether modern LLMs can reliably evaluate student answers, assign
+        consistent scores, and generate meaningful feedback—without compromising
+        fairness, correctness, or pedagogical value.
+      </p>
+
+      <h3>Approach</h3>
+      <ul>
+        <li>Designed structured prompts for grading and feedback generation</li>
+        <li>Tested multiple LLM configurations across diverse exam questions</li>
+        <li>Compared model outputs against predefined grading criteria</li>
+        <li>Analyzed consistency, failure cases, and hallucination patterns</li>
+      </ul>
+
+      <h3>Key Explorations</h3>
+      <ul>
+        <li>Prompt engineering strategies for grading versus feedback tasks</li>
+        <li>Model sensitivity to question phrasing and answer structure</li>
+        <li>Differences between numerical scoring and qualitative feedback</li>
+        <li>Limitations of LLMs in mathematical and vision-related reasoning</li>
+      </ul>
+
+      <h3>Impact & Findings</h3>
+      <p>
+        The study demonstrated strong LLM performance for structured,
+        concept-based answers while revealing reduced reliability for visually
+        grounded or mathematically intensive tasks. Results highlighted the
+        importance of prompt design and rubric clarity, directly informing future
+        research directions in AI-assisted assessment and feedback systems.
+      </p>
+
+      <h3>Focus Areas & Skills</h3>
+      <ul>
+        <li>Large Language Models (LLMs)</li>
+        <li>Prompt Engineering for Evaluation</li>
+        <li>AI-assisted Grading & Feedback Systems</li>
+        <li>Model Behavior and Failure Analysis</li>
+        <li>Research-oriented Experimentation</li>
+        <li>Technical Analysis and Documentation</li>
+      </ul>
+
+      <div class="divider"></div>
+
+    </section>
+
+    <!-- Independent projects will go BELOW this later -->
+    <!-- Master’s thesis will go ABOVE this later -->
+
   </main>
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+       ========================= -->
 
   <script>
     const hamburger = document.getElementById("hamburger");
