@@ -411,12 +411,13 @@ main {
 
   body.about-page .codecard-body {
     height: 60svh;
-    overflow-y: auto;        /* allow scroll inside editor */
-    text-align: left;        /* FIX: no centering */
+    overflow-y: auto;
+    text-align: left;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
     padding-bottom: 5rem;
   }
+
 
   body.about-page #typewriter {
     display: block;
