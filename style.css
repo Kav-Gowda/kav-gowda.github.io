@@ -385,20 +385,22 @@ main {
   }
 
   /* 🔴 KILL DESKTOP LAYOUT COMPLETELY */
-  body.about-page .about-layout {
-    height: 100%;
+   body.about-page .about-layout {
+    min-height: 100svh;          /* allow layout to grow */
     width: 100%;
-    padding: 0;              /* 🔥 removes 42vw desktop padding */
+    padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 1.2rem;
-    padding-top: 4.8rem;     /* space below nav */
+    padding-top: 4.8rem;
+    padding-bottom: 48svh;       /* reserve space for fixed photo */
     box-sizing: border-box;
     z-index: 3;
   }
+
 
   /* ✅ EDITOR — FULL WIDTH, CENTERED */
   body.about-page .about-codecard {
