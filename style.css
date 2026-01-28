@@ -12,11 +12,11 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Cinzel", serif;
-  overflow-x: hidden;
+  overflow-x: hidden; /* prevents mobile horizontal zoom/shift */
 }
 
 /* =========================
-   GLOBAL BACKGROUND
+   GLOBAL BACKGROUND (ALL PAGES)
    ========================= */
 
 body {
@@ -33,28 +33,29 @@ body::before {
 }
 
 /* =========================
-   NAVIGATION (DESKTOP)
+   NAVIGATION (GLOBAL) — FIXED
    ========================= */
 
 .desktop-nav {
-  position: fixed;
+  position: fixed;                 /* FIX 1 */
   top: 0;
   right: 0;
   width: 100%;
-  height: 72px;
+  height: 72px;                    /* FIX 1 */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 2.6rem;
   padding-right: 4rem;
-  background: rgba(255, 255, 255, 0.85);
+
+  background: rgba(255, 255, 255, 0.85); /* FIX 1 */
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08); /* FIX 3 */
   z-index: 100;
 }
 
 .desktop-nav a {
-  color: #5b4b8a;
+  color: #5b4b8a; /* lavender */
   text-decoration: none;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
@@ -65,7 +66,10 @@ body::before {
   opacity: 0.75;
 }
 
-/* ACTIVE NAV */
+/* =========================
+   ACTIVE NAV STATE (DESKTOP ONLY)
+   ========================= */
+
 body.home-page .desktop-nav a[href="index.html"],
 body.about-page .desktop-nav a[href="about.html"],
 body.resume-page .desktop-nav a[href="resume.html"],
@@ -73,17 +77,130 @@ body.portfolio-page .desktop-nav a[href="portfolio.html"],
 body.achievements-page .desktop-nav a[href="achievements.html"],
 body.contact-page .desktop-nav a[href="contact.html"] {
   font-weight: 700;
+  opacity: 1;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
-/* GLOBAL OFFSET */
+/* =========================
+   GLOBAL CONTENT OFFSET (CRITICAL)
+   ========================= */
+
 main {
-  padding-top: 120px;
+  padding-top: 120px; /* FIX 2 — nav height + breathing room */
 }
 
 /* =========================
-   ABOUT PAGE (DESKTOP)
+   MOBILE NAV
+   ========================= */
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 1.1rem;
+  left: 1.25rem;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  background: rgba(91, 75, 138, 0.92);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: rgba(20, 18, 32, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  transition: left 0.3s ease;
+  z-index: 55;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+.mobile-menu .close {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.mobile-menu a {
+  color: #efeaff;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+/* =========================
+   HOME HERO (DESKTOP)
+   ========================= */
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 4rem;
+}
+
+.hero-image {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.hero-image img {
+  height: 82vh;
+  max-height: 880px;
+  width: auto;
+  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.35));
+}
+
+.hero-content h1 {
+  font-size: 3.4rem;
+  margin-bottom: 0.8rem;
+  color: #4a3b78; /* dark lavender */
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  font-style: italic;
+  margin-bottom: 1.8rem;
+  color: #5b4b8a;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.75rem 2.2rem;
+  border-radius: 999px;
+  background: rgba(235, 230, 250, 0.95);
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   ABOUT PAGE (DESKTOP) — FINAL & CORRECT
    ========================= */
 
 .about-main {
@@ -92,6 +209,7 @@ main {
   position: relative;
 }
 
+/* PHOTO — flush left, bottom aligned, viewport-anchored */
 .about-photo {
   position: fixed;
   bottom: 0;
@@ -106,30 +224,36 @@ main {
 }
 
 .about-photo img {
-  height: 82vh;
+  height: 82vh;                /* EXACT Home size */
   max-height: 880px;
   width: auto;
+  filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.28));
 }
 
+/* CONTENT — pushed right, never overlaps */
 .about-layout {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 6vw;
-  padding-left: 42vw;
+  padding-left: 42vw;          /* reserves space for photo */
   box-sizing: border-box;
+  position: relative;
   z-index: 2;
 }
 
+/* CODE EDITOR */
 .about-codecard {
   width: 100%;
-  max-width: 650px;
-  background: rgba(18, 22, 26, 0.9);
+  max-width: 650px; /* ↑ increased from 520px */
+  background: rgba(18, 22, 26, 0.90);
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
 
+/* TOP BAR */
 .codecard-topbar {
   display: flex;
   align-items: center;
@@ -139,24 +263,41 @@ main {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.codecard-topbar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.codecard-title {
+  margin-left: auto;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* BODY — stable typing */
 .codecard-body {
-  height: 500px;
-  padding: 0.9rem 2.2rem 2.2rem;
-  font-family: ui-monospace, Menlo, Consolas, monospace;
+  height: 500px; /* ↑ taller on laptop */
+  padding: 0.9rem 2.2rem 2.2rem; /* 🔧 pull text up by ~1 line */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1rem;
   line-height: 1.6;
   white-space: pre-wrap;
   color: #f2f2f6;
   overflow-y: auto;
-  text-align: left;
+  text-align: left; /*  FIX: aligns first line with others on laptop */
+  text-indent: 0;
 }
-
+/* FIX: ensure first typed line is flush-left on desktop */
 #typewriter {
   display: block;
 }
 
 /* =========================
-   MOBILE ONLY FIXES
+   MOBILE — FINAL, SAFE, ISOLATED
    ========================= */
 
 @media (max-width: 900px) {
@@ -171,36 +312,137 @@ main {
   }
 
   /* =========================
+     HOME PAGE — MOBILE (SAFE)
+     ========================= */
+
+  body.home-page {
+    overflow-y: auto; /* allow scroll, prevents clipping */
+  }
+
+  body.portfolio-page {
+    overflow-y: auto;
+  }
+
+  body.home-page .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5.2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  body.home-page .hero-content {
+    width: 90%;
+    max-width: 360px;
+    margin: 0 auto;
+    z-index: 3;
+  }
+
+  body.home-page .hero-content h1 {
+    font-size: 1.85rem; /* prevents name clipping */
+    line-height: 1.15;
+  }
+
+  body.home-page .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Home photo — unchanged, safe */
+  body.home-page .hero-image {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52svh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  body.home-page .hero-image img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-height: none;
+    margin: 0;
+  }
+
+  /* =========================
      ABOUT PAGE — MOBILE (FIXED)
      ========================= */
 
   body.about-page .about-main {
     height: 100svh;
     overflow: hidden;
+    position: relative;
   }
 
-  body.about-page .about-layout {
-    height: 100svh;                 /* 🔧 MOBILE FIX */
+  /* 🔴 KILL DESKTOP LAYOUT COMPLETELY */
+   body.about-page .about-layout {
+    min-height: 100svh;          /* allow layout to grow */
+    width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
-    padding-top: 5rem;              /* 🔧 MOBILE FIX */
+    gap: 1.2rem;
+    padding-top: 4.8rem;
+    padding-bottom: 48svh;       /* reserve space for fixed photo */
+    box-sizing: border-box;
+    z-index: 3;
   }
 
+
+  /* ✅ EDITOR — FULL WIDTH, CENTERED */
   body.about-page .about-codecard {
     width: 94%;
+    max-width: none;
     margin: 0 auto;
   }
 
   body.about-page .codecard-body {
-    height: calc(100svh - 220px);   /* 🔧 MOBILE FIX */
+    height: 60svh;
     overflow-y: auto;
+    text-align: left;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    padding-bottom: 5rem;
   }
 
-  /* 🔧 MOBILE FIX: REMOVE PHOTO COMPLETELY */
+
+  body.about-page #typewriter {
+    display: block;
+    white-space: pre-wrap;
+    text-align: left;        /* FIX: Hello aligns left */
+  }
+
+  /* ✅ PHOTO — FIXED AT BOTTOM, SMALLER */
   body.about-page .about-photo {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 46svh;           /* reduced so editor fits */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  body.about-page .about-photo img {
+    height: 100%;
+    width: auto;
+    display: block;
+    margin: 0;
   }
 }
