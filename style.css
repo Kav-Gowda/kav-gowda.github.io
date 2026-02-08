@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 /* RESET */
 * {
@@ -11,9 +11,10 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "Cinzel", serif;
-  overflow-x: hidden; /* prevents mobile horizontal zoom/shift */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
 }
+
 
 /* =========================
    GLOBAL BACKGROUND (ALL PAGES)
@@ -557,3 +558,15 @@ main {
   }
 }
 
+/* =========================
+   NAV — WIDTH CONSTRAINT FIX
+   ========================= */
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
