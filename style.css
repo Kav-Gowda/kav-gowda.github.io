@@ -455,3 +455,105 @@ main {
     margin: 0;
   }
 }
+
+/* =========================
+   NAV — NAME + ROLE (LEFT)
+   ========================= */
+
+.desktop-nav {
+  justify-content: space-between;
+  padding-left: 3rem;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4a3b78;
+}
+
+.nav-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6a5aa3;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2.6rem;
+}
+
+/* =========================
+   HERO — ARUTHRA-INSPIRED
+   ========================= */
+
+.hero {
+  padding-left: 4rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #efeaff;
+  background: rgba(91, 75, 138, 0.9);
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-role {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #5b4b8a;
+  margin-bottom: 1.2rem;
+}
+
+.hero-description {
+  max-width: 480px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #3e355f;
+}
+
+.hero-socials {
+  margin-top: 1.6rem;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.hero-socials a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #5b4b8a;
+  font-weight: 600;
+}
+
+.hero-socials a:hover {
+  opacity: 0.75;
+}
+
+/* =========================
+   MOBILE — NAV NAME SAFE
+   ========================= */
+
+@media (max-width: 900px) {
+  .nav-left {
+    display: none;
+  }
+}
+
