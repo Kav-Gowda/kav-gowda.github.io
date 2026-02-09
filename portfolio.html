@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Projects</title>
+  <title>Relevant Work</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* =========================
-       PAGE LAYOUT
-       ========================= */
-
     body.portfolio-page {
       overflow-y: auto;
     }
 
     main.portfolio-page {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 160px 20px 120px;
     }
@@ -29,120 +25,105 @@
     .projects-header h1 {
       font-size: 42px;
       color: #4a3b78;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .projects-header p {
       font-size: 16px;
       color: #5b4b8a;
-      max-width: 620px;
       margin-bottom: 56px;
-      line-height: 1.6;
     }
 
     /* =========================
-       PROJECT CARD
+       CARD
        ========================= */
 
     .project-card {
-      background: rgba(255, 255, 255, 0.9);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid rgba(91, 75, 138, 0.22);
       border-radius: 18px;
-      padding: 34px 38px;
+      padding: 36px 40px;
       margin-bottom: 48px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.08);
     }
 
     .project-title {
       font-size: 22px;
       font-weight: 600;
-      color: #000000;
+      color: #000;
       margin-bottom: 6px;
     }
 
     .project-stack {
       font-size: 14px;
       color: #5b4b8a;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .project-description {
       font-size: 16px;
-      color: #000000;
-      line-height: 1.65;
-      margin-bottom: 22px;
-      max-width: 900px;
+      color: #000;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      max-width: 620px;
+    }
+
+    /* =========================
+       ARCHITECTURE
+       ========================= */
+
+    .architecture-toggle {
+      font-size: 14px;
+      color: #4a3b78;
+      cursor: pointer;
+      margin-bottom: 10px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .architecture {
+      display: none;
+      font-size: 14px;
+      color: #2b2b2b;
+      line-height: 1.6;
+      margin-top: 6px;
     }
 
     /* =========================
        IMPACT
        ========================= */
 
-    .project-impact {
-      margin-bottom: 22px;
-    }
-
-    .project-impact h4 {
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #4a3b78;
-      margin-bottom: 10px;
-    }
-
-    .project-impact ul {
-      padding-left: 18px;
-    }
-
-    .project-impact li {
-      font-size: 15px;
-      color: #000000;
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-
-    /* =========================
-       TAGS + CTA
-       ========================= */
-
-    .project-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .project-tag {
+    .impact h4 {
       font-size: 13px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(91, 75, 138, 0.12);
+      letter-spacing: 0.1em;
       color: #4a3b78;
-      white-space: nowrap;
+      margin-bottom: 12px;
     }
 
-    .project-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .impact ul {
+      padding-left: 18px;
+      margin-bottom: 20px;
+    }
+
+    .impact li {
+      font-size: 15px;
+      color: #000;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .view-code {
+      display: inline-block;
       padding: 10px 18px;
       border-radius: 999px;
       background: #6b6df6;
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-    }
-
-    .project-cta:hover {
-      opacity: 0.9;
     }
 
     /* =========================
@@ -150,20 +131,13 @@
        ========================= */
 
     @media (max-width: 900px) {
-      main.portfolio-page {
-        padding: 120px 16px 96px;
+      .project-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
       }
 
       .projects-header h1 {
         font-size: 30px;
-      }
-
-      .project-card {
-        padding: 26px 24px;
-      }
-
-      .project-title {
-        font-size: 20px;
       }
     }
   </style>
@@ -191,7 +165,6 @@
         <span class="nav-name">Kavitha Lingarajegowda</span>
         <span class="nav-role">Software & AI Engineer</span>
       </div>
-
       <div class="nav-right">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
@@ -203,211 +176,166 @@
     </div>
   </nav>
 
-  <!-- =========================
-       PROJECTS CONTENT
-       ========================= -->
-
   <main class="portfolio-page">
 
     <header class="projects-header">
-      <h1>Selected Projects</h1>
-      <p>
-        A curated selection of projects focused on agentic systems,
-        retrieval-augmented generation, and production-oriented AI engineering.
-      </p>
+      <h1>Relevant Work</h1>
+      <p>Production-oriented AI systems and applied research projects.</p>
     </header>
 
     <!-- PROJECT 1 -->
     <div class="project-card">
-      <div class="project-title">Agentic Workflow Design Patterns</div>
-      <div class="project-stack">LangGraph · Agentic Systems · Deterministic Pipelines</div>
-
-      <div class="project-description">
-        Designed a collection of reusable agentic workflow patterns using LangGraph,
-        focusing on controllability, determinism, and enterprise-ready orchestration.
-      </div>
-
-      <div class="project-impact">
-        <h4>Impact</h4>
-        <ul>
-          <li>Implemented routing nodes, conditional flows, parallel branches, and state graphs</li>
-          <li>Enabled deterministic end-to-end execution for controllable AI systems</li>
-          <li>Demonstrates graph-based reasoning beyond single-agent prompts</li>
-        </ul>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">LangGraph</span>
-          <span class="project-tag">Agentic AI</span>
-          <span class="project-tag">State Graphs</span>
-          <span class="project-tag">Deterministic Pipelines</span>
+      <div>
+        <div class="project-title">Agentic Workflow Design Patterns</div>
+        <div class="project-stack">LangGraph · Agentic Systems · Deterministic Pipelines</div>
+        <div class="project-description">
+          A collection of reusable agentic workflow patterns designed for controllable,
+          deterministic, and enterprise-ready AI systems.
         </div>
 
-        <a class="project-cta" href="https://github.com/Kav-Gowda/agentic-workflow-design-patterns-langgraph" target="_blank">
-          View Code
-        </a>
+        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture">
+          LangGraph workflows → routing & conditional nodes → parallel execution
+          → state graph orchestration → deterministic agent output
+        </div>
+      </div>
+
+      <div class="impact">
+        <h4>IMPACT</h4>
+        <ul>
+          <li>Demonstrates graph-based agent design beyond prompt chaining</li>
+          <li>Enables predictable execution in multi-agent systems</li>
+          <li>Reusable patterns for production AI workflows</li>
+        </ul>
+        <a class="view-code" href="https://github.com/Kav-Gowda/agentic-workflow-design-patterns-langgraph" target="_blank">View Code</a>
       </div>
     </div>
 
     <!-- PROJECT 2 -->
     <div class="project-card">
-      <div class="project-title">Web-Scale RAG Pipeline</div>
-      <div class="project-stack">LangChain · Llama 3.1 · Vector Search · Web Ingestion</div>
-
-      <div class="project-description">
-        Built a dynamic Retrieval-Augmented Generation pipeline capable of ingesting
-        live web data and generating context-aware responses in real time.
-      </div>
-
-      <div class="project-impact">
-        <h4>Impact</h4>
-        <ul>
-          <li>Designed streaming ingestion and adaptive retrieval workflows</li>
-          <li>Reduced hallucinations via strict context grounding</li>
-          <li>Demonstrates scalable, real-time RAG system design</li>
-        </ul>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">RAG</span>
-          <span class="project-tag">LangChain</span>
-          <span class="project-tag">Llama 3.1</span>
-          <span class="project-tag">Vector Databases</span>
+      <div>
+        <div class="project-title">Web-Scale RAG Pipeline</div>
+        <div class="project-stack">LangChain · Llama 3.1 · Real-Time Retrieval</div>
+        <div class="project-description">
+          A dynamic RAG system designed for live web ingestion and context-adaptive
+          response generation.
         </div>
 
-        <a class="project-cta" href="https://github.com/Kav-Gowda/Web-Scale_RAG_Pipeline" target="_blank">
-          View Code
-        </a>
+        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture">
+          Web ingestion → text chunking & embeddings → vector retrieval
+          → context filtering → Llama 3.1 response generation
+        </div>
+      </div>
+
+      <div class="impact">
+        <h4>IMPACT</h4>
+        <ul>
+          <li>Reduces hallucinations through strict context grounding</li>
+          <li>Supports real-time knowledge updates</li>
+          <li>Scalable RAG design for web-scale data</li>
+        </ul>
+        <a class="view-code" href="https://github.com/Kav-Gowda/Web-Scale_RAG_Pipeline" target="_blank">View Code</a>
       </div>
     </div>
 
     <!-- PROJECT 3 -->
     <div class="project-card">
-      <div class="project-title">Secure Document Summarization using RAG</div>
-      <div class="project-stack">LangChain · Granite LLM · Secure Retrieval</div>
-
-      <div class="project-description">
-        Developed a secure document retrieval and summarization system ensuring
-        private data remains confidential during conversational querying.
-      </div>
-
-      <div class="project-impact">
-        <h4>Impact</h4>
-        <ul>
-          <li>Implemented chunking, embeddings, and controlled access mechanisms</li>
-          <li>Prevented data leakage in conversational AI workflows</li>
-          <li>Focused on enterprise-grade document security</li>
-        </ul>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Secure RAG</span>
-          <span class="project-tag">Granite LLM</span>
-          <span class="project-tag">LangChain</span>
+      <div>
+        <div class="project-title">Secure Document Summarization using RAG</div>
+        <div class="project-stack">LangChain · Granite LLM · Secure Retrieval</div>
+        <div class="project-description">
+          A secure document retrieval and summarization pipeline designed for
+          confidential data access.
         </div>
 
-        <a class="project-cta" href="https://github.com/Kav-Gowda/Secure_Document_Summarization_using_RAG/blob/main/README.md" target="_blank">
-          View Code
-        </a>
+        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture">
+          Document ingestion → chunking & embeddings → access-controlled retrieval
+          → Granite LLM summarization
+        </div>
+      </div>
+
+      <div class="impact">
+        <h4>IMPACT</h4>
+        <ul>
+          <li>Prevents data leakage in conversational workflows</li>
+          <li>Enterprise-grade document security</li>
+          <li>Reliable grounded summarization</li>
+        </ul>
+        <a class="view-code" href="https://github.com/Kav-Gowda/Secure_Document_Summarization_using_RAG/blob/main/README.md" target="_blank">View Code</a>
       </div>
     </div>
 
     <!-- PROJECT 4 -->
     <div class="project-card">
-      <div class="project-title">Agentic Math Assistant with Tool Calling</div>
-      <div class="project-stack">LangChain · LangGraph · Tool Calling</div>
-
-      <div class="project-description">
-        Built an intelligent math assistant capable of selecting and executing
-        arithmetic tools through structured schemas and multi-step reasoning.
-      </div>
-
-      <div class="project-impact">
-        <h4>Impact</h4>
-        <ul>
-          <li>Implemented OpenAI-style tool calling with schema validation</li>
-          <li>Passed an internal test suite for correctness</li>
-          <li>Demonstrates reliable agent reasoning loops</li>
-        </ul>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Tool Calling</span>
-          <span class="project-tag">LangChain</span>
-          <span class="project-tag">Agent Reasoning</span>
+      <div>
+        <div class="project-title">Agentic Math Assistant with Tool Calling</div>
+        <div class="project-stack">LangChain · LangGraph · Tool Calling</div>
+        <div class="project-description">
+          An intelligent math agent capable of structured tool selection and
+          multi-step reasoning.
         </div>
 
-        <a class="project-cta" href="https://github.com/Kav-Gowda/agentic-math-assistant-tool-calling-langchain" target="_blank">
-          View Code
-        </a>
+        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture">
+          Natural language input → intent parsing → tool selection
+          → arithmetic execution → validated response
+        </div>
+      </div>
+
+      <div class="impact">
+        <h4>IMPACT</h4>
+        <ul>
+          <li>Reliable OpenAI-style tool calling</li>
+          <li>Schema-validated agent outputs</li>
+          <li>Tested for correctness</li>
+        </ul>
+        <a class="view-code" href="https://github.com/Kav-Gowda/agentic-math-assistant-tool-calling-langchain" target="_blank">View Code</a>
       </div>
     </div>
 
     <!-- PROJECT 5 -->
     <div class="project-card">
-      <div class="project-title">Visual Data Inspect AI</div>
-      <div class="project-stack">Computer Vision · Industrial ML · Quality Inspection</div>
-
-      <div class="project-description">
-        Developed a machine learning-based visual inspection system to detect
-        manufacturing defects from image data.
-      </div>
-
-      <div class="project-impact">
-        <h4>Impact</h4>
-        <ul>
-          <li>Bridges computer vision with industrial automation use cases</li>
-          <li>Supports scalable defect detection pipelines</li>
-          <li>Demonstrates applied ML beyond language models</li>
-        </ul>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Computer Vision</span>
-          <span class="project-tag">Industrial AI</span>
-          <span class="project-tag">Automation</span>
+      <div>
+        <div class="project-title">Visual Data Inspect AI</div>
+        <div class="project-stack">Computer Vision · Industrial ML · Automation</div>
+        <div class="project-description">
+          A machine learning-based visual inspection system for detecting
+          manufacturing defects.
         </div>
 
-        <a class="project-cta" href="https://github.com/Kav-Gowda/VisualDataInspect-AI" target="_blank">
-          View Code
-        </a>
+        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture">
+          Image ingestion → preprocessing → feature extraction
+          → defect classification → inspection output
+        </div>
+      </div>
+
+      <div class="impact">
+        <h4>IMPACT</h4>
+        <ul>
+          <li>Bridges computer vision with industrial automation</li>
+          <li>Supports scalable quality inspection</li>
+          <li>Applied ML beyond language models</li>
+        </ul>
+        <a class="view-code" href="https://github.com/Kav-Gowda/VisualDataInspect-AI" target="_blank">View Code</a>
       </div>
     </div>
 
   </main>
 
-  <!-- =========================
-       MOBILE MENU SCRIPT
-       ========================= -->
-
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const closeMenu = document.getElementById("closeMenu");
-
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      mobileMenu.classList.toggle("open");
-    });
-
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        mobileMenu.classList.contains("open") &&
-        !mobileMenu.contains(e.target) &&
-        e.target !== hamburger
-      ) {
-        mobileMenu.classList.remove("open");
+    function toggleArch(el) {
+      const arch = el.nextElementSibling;
+      if (arch.style.display === "block") {
+        arch.style.display = "none";
+        el.textContent = "^ Show Architecture";
+      } else {
+        arch.style.display = "block";
+        el.textContent = "^ Hide Architecture";
       }
-    });
+    }
   </script>
 
 </body>
