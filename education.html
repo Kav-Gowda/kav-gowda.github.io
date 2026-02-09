@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body.education-page {
+      overflow-y: auto;
+    }
+
+    main.education-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 160px 20px 120px;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .education-header h1 {
+      font-size: 42px;
+      color: #4a3b78;
+      margin-bottom: 8px;
+    }
+
+    .education-header p {
+      font-size: 16px;
+      color: #5b4b8a;
+      max-width: 620px;
+      margin-bottom: 56px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       EDUCATION CARD
+       ========================= */
+
+    .edu-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(91,75,138,0.22);
+      border-radius: 18px;
+      padding: 36px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.08);
+    }
+
+    .edu-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: #5b4b8a;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(91,75,138,0.15);
+      color: #4a3b78;
+    }
+
+    .edu-degree {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 6px;
+    }
+
+    .edu-university {
+      font-size: 15px;
+      color: #4a3b78;
+      margin-bottom: 14px;
+    }
+
+    .edu-description {
+      font-size: 15px;
+      color: #000;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      max-width: 820px;
+    }
+
+    .edu-points ul {
+      padding-left: 18px;
+    }
+
+    .edu-points li {
+      font-size: 15px;
+      color: #000;
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 900px) {
+      main.education-page {
+        padding: 120px 16px 96px;
+      }
+
+      .education-header h1 {
+        font-size: 30px;
+      }
+
+      .edu-card {
+        padding: 26px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="education-page">
+
+  <!-- Mobile nav -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <aside class="mobile-menu" id="mobileMenu">
+    <button class="close" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="achievements.html">Certifications</a>
+    <a href="resume.html">Experience</a>
+    <a href="education.html">Education</a>
+  </aside>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <span class="nav-name">Kavitha Lingarajegowda</span>
+        <span class="nav-role">Software & AI Engineer</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="achievements.html">Certifications</a>
+        <a href="resume.html">Experience</a>
+        <a href="education.html">Education</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================
+       EDUCATION CONTENT
+       ========================= -->
+
+  <main class="education-page">
+
+    <header class="education-header">
+      <h1>Academic Background</h1>
+      <p>
+        Academic foundation in automotive software engineering, embedded systems,
+        and computer science, with a strong focus on reliable and scalable systems.
+      </p>
+    </header>
+
+    <!-- MASTER'S -->
+    <section class="edu-card">
+      <div class="edu-meta">
+        <span>Oct 2022 – Mar 2026 (Expected)</span>
+        <span class="status-badge">In Progress</span>
+      </div>
+
+      <div class="edu-degree">Master of Science – Automotive Software Engineering</div>
+      <div class="edu-university">Chemnitz University of Technology · Germany</div>
+
+      <div class="edu-description">
+        Graduate program focused on software engineering for automotive and embedded
+        systems, real-time computing, and research-oriented system design.
+      </div>
+
+      <div class="edu-points">
+        <ul>
+          <li>Studied formal specification, verification, and deterministic system design</li>
+          <li>Completed coursework in embedded systems and automotive software platforms</li>
+          <li>Worked with real-time systems, multicore programming, and service-oriented architectures</li>
+          <li>Gained hands-on experience with hardware/software co-design and VHDL</li>
+          <li>Completed research seminars and a research internship in applied AI systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BACHELOR'S -->
+    <section class="edu-card">
+      <div class="edu-meta">
+        <span>Aug 2018 – Jul 2022</span>
+      </div>
+
+      <div class="edu-degree">Bachelor of Engineering – Computer Science & Engineering</div>
+      <div class="edu-university">PES Institute of Technology & Management · India</div>
+
+      <div class="edu-description">
+        Undergraduate foundation in computer science, algorithms, data systems,
+        and applied machine learning.
+      </div>
+
+      <div class="edu-points">
+        <ul>
+          <li>Built a Bachelor’s thesis combining IoT and machine learning for smart agriculture</li>
+          <li>Applied Random Forest, Gradient Boosting, and SVM models to real sensor data</li>
+          <li>Completed coursework in data structures, algorithms, databases, and operating systems</li>
+          <li>Studied computer networks, software engineering, and microcontroller systems</li>
+          <li>Developed full-stack and backend projects as part of applied coursework</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+       ========================= -->
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("open");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu.classList.contains("open") &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== hamburger
+      ) {
+        mobileMenu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
