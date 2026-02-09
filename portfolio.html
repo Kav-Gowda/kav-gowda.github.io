@@ -96,12 +96,27 @@
        IMPACT
        ========================= */
 
-    .impact h4 {
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      color: #4a3b78;
-      margin-bottom: 12px;
-    }
+
+.impact h4 {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #4a3b78;
+  margin-bottom: 12px;
+}
+
+/* 🔹 ADD THIS BLOCK */
+.impact-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.impact-title::before {
+  content: "↗";
+  font-size: 14px;
+  color: #6b6df6;
+}
+
 
     .impact ul {
       padding-left: 18px;
@@ -193,7 +208,7 @@
           deterministic, and enterprise-ready AI systems.
         </div>
 
-        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           LangGraph workflows → routing & conditional nodes → parallel execution
           → state graph orchestration → deterministic agent output
@@ -201,7 +216,7 @@
       </div>
 
       <div class="impact">
-        <h4>IMPACT</h4>
+        <h4 class="impact-title">IMPACT</h4>
         <ul>
           <li>Demonstrates graph-based agent design beyond prompt chaining</li>
           <li>Enables predictable execution in multi-agent systems</li>
@@ -221,7 +236,7 @@
           response generation.
         </div>
 
-        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Web ingestion → text chunking & embeddings → vector retrieval
           → context filtering → Llama 3.1 response generation
@@ -249,7 +264,7 @@
           confidential data access.
         </div>
 
-        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Document ingestion → chunking & embeddings → access-controlled retrieval
           → Granite LLM summarization
@@ -277,7 +292,7 @@
           multi-step reasoning.
         </div>
 
-        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Natural language input → intent parsing → tool selection
           → arithmetic execution → validated response
@@ -305,7 +320,7 @@
           manufacturing defects.
         </div>
 
-        <div class="architecture-toggle" onclick="toggleArch(this)">^ Show Architecture</div>
+        <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Image ingestion → preprocessing → feature extraction
           → defect classification → inspection output
@@ -330,11 +345,12 @@
       const arch = el.nextElementSibling;
       if (arch.style.display === "block") {
         arch.style.display = "none";
-        el.textContent = "^ Show Architecture";
+        el.textContent = "⌄ Show Architecture";
       } else {
         arch.style.display = "block";
         el.textContent = "^ Hide Architecture";
       }
+
     }
   </script>
 
