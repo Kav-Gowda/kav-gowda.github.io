@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* =========================
+       PAGE LAYOUT
+       ========================= */
+
+    body.skills-page {
+      overflow-y: auto;
+    }
+
+    main.skills-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 160px 20px 120px;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .skills-header h1 {
+      font-size: 42px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .skills-header p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 64px;
+      max-width: 560px;
+    }
+
+    /* =========================
+       SKILLS GRID
+       ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .skill-card {
+      background: rgba(20, 18, 32, 0.85);
+      border-radius: 18px;
+      padding: 32px 36px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .skill-card h2 {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skill-card li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .skill-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #7b6cff;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 900px) {
+      main.skills-page {
+        padding: 120px 16px 96px;
+      }
+
+      .skills-header h1 {
+        font-size: 30px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .skill-card {
+        padding: 26px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="skills-page">
+
+  <!-- Mobile nav -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <aside class="mobile-menu" id="mobileMenu">
+    <button class="close" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="achievements.html">Certifications</a>
+    <a href="resume.html">Experience</a>
+    <a href="education.html">Education</a>
+  </aside>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav">
+    <div class="nav-inner">
+
+      <div class="nav-left">
+        <span class="nav-name">Kavitha Lingarajegowda</span>
+        <span class="nav-role">Software & AI Engineer</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="achievements.html">Certifications</a>
+        <a href="resume.html">Experience</a>
+        <a href="education.html">Education</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- =========================
+       SKILLS CONTENT
+       ========================= -->
+
+  <main class="skills-page">
+
+    <header class="skills-header">
+      <h1>Technical Strengths</h1>
+      <p>
+        A balanced skill set spanning software engineering fundamentals,
+        applied AI systems, and production-oriented machine learning workflows.
+      </p>
+    </header>
+
+    <section class="skills-grid">
+
+      <div class="skill-card">
+        <h2>Core Software Engineering</h2>
+        <ul>
+          <li>Python programming for production and research workflows</li>
+          <li>Backend debugging, stabilization, and reliability improvements</li>
+          <li>API-driven systems and data processing pipelines</li>
+          <li>ETL workflow design and structured data preparation</li>
+          <li>Agile development practices, testing, and documentation</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>AI & Machine Learning</h2>
+        <ul>
+          <li>Machine Learning fundamentals and applied NLP</li>
+          <li>PyTorch-based model development and experimentation</li>
+          <li>Feature engineering and data preprocessing</li>
+          <li>Model evaluation, benchmarking, and error analysis</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>Generative AI & LLM Systems</h2>
+        <ul>
+          <li>Large Language Models (LLMs) and applied research workflows</li>
+          <li>Prompt engineering for evaluation and feedback tasks</li>
+          <li>Retrieval-Augmented Generation (RAG) pipelines</li>
+          <li>Agent-driven and deterministic evaluation workflows</li>
+          <li>LLM behavior analysis and failure-mode investigation</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>Data, MLOps & Platforms</h2>
+        <ul>
+          <li>End-to-end data and model pipelines</li>
+          <li>Experiment tracking, monitoring, and CI/CD support</li>
+          <li>Cloud platforms: AWS, Azure, GCP</li>
+          <li>Developer tools: Git, Hugging Face, LangChain</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+       ========================= -->
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("open");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu.classList.contains("open") &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== hamburger
+      ) {
+        mobileMenu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
 
