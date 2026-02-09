@@ -5,7 +5,6 @@
   <title>Skills</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Global styles -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -28,17 +27,19 @@
        ========================= */
 
     .skills-header h1 {
-      font-size: 40px;
-      color: #000000;
-      margin-bottom: 10px;
+      font-size: 42px;
+      color: #4a3b78;   /* lavender heading */
+      margin-bottom: 12px;
     }
 
     .skills-header p {
-      font-size: 15px;
-      color: #444444;
-      margin-bottom: 56px;
-      max-width: 560px;
+      font-size: 16px;
+      color: #5b4b8a;   /* lighter lavender subtitle */
+      margin-bottom: 64px;
+      max-width: 620px;
+      line-height: 1.6;
     }
+
 
     /* =========================
        SKILLS GRID
@@ -51,31 +52,30 @@
     }
 
     .skill-card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 18px;
-      padding: 28px 32px;
-      border: 1px solid rgba(91, 75, 138, 0.18);
+      padding: 30px 34px;
+      border: 1px solid rgba(91, 75, 138, 0.25);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
     }
 
     .skill-card h2 {
-      font-size: 18px;
+      font-size: 20px;
       color: #4a3b78;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       font-weight: 600;
     }
 
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
+    .skill-card ul {
+      list-style: none;
+      padding-left: 0;
     }
 
-    .skill-item {
-      font-size: 14px;
+    .skill-card li {
+      font-size: 16px;
       color: #000000;
-      padding: 4px 0;
-      white-space: nowrap;
+      margin-bottom: 10px;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -88,7 +88,7 @@
       }
 
       .skills-header h1 {
-        font-size: 28px;
+        font-size: 30px;
       }
 
       .skills-grid {
@@ -97,7 +97,11 @@
       }
 
       .skill-card {
-        padding: 24px 22px;
+        padding: 26px 24px;
+      }
+
+      .skill-card li {
+        font-size: 15px;
       }
     }
   </style>
@@ -146,64 +150,88 @@
     <header class="skills-header">
       <h1>Technical Strengths</h1>
       <p>
-        A concise overview of my core technical skills, optimized for quick scanning.
+        A concise overview of my technical skill set, structured for quick scanning
+        and aligned with software, AI, and automotive systems engineering.
       </p>
     </header>
 
     <section class="skills-grid">
 
       <div class="skill-card">
-        <h2>Core Software Engineering</h2>
-        <div class="skill-list">
-          <span class="skill-item">Python</span>
-          <span class="skill-item">SQL</span>
-          <span class="skill-item">Backend Debugging</span>
-          <span class="skill-item">API-Based Systems</span>
-          <span class="skill-item">ETL Pipelines</span>
-          <span class="skill-item">Data Processing</span>
-          <span class="skill-item">Agile Development</span>
-          <span class="skill-item">Testing</span>
-          <span class="skill-item">Documentation</span>
-        </div>
+        <h2>Software Engineering</h2>
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Backend Debugging & Reliability</li>
+          <li>API-Based Systems</li>
+          <li>ETL Pipelines</li>
+          <li>Agile Development</li>
+          <li>Testing & Documentation</li>
+        </ul>
       </div>
 
       <div class="skill-card">
         <h2>AI & Machine Learning</h2>
-        <div class="skill-list">
-          <span class="skill-item">Machine Learning</span>
-          <span class="skill-item">NLP</span>
-          <span class="skill-item">PyTorch</span>
-          <span class="skill-item">Feature Engineering</span>
-          <span class="skill-item">Data Preprocessing</span>
-          <span class="skill-item">Model Evaluation</span>
-          <span class="skill-item">Error Analysis</span>
-        </div>
+        <ul>
+          <li>Machine Learning Fundamentals</li>
+          <li>Natural Language Processing (NLP)</li>
+          <li>PyTorch</li>
+          <li>Feature Engineering</li>
+          <li>Model Evaluation & Error Analysis</li>
+        </ul>
       </div>
 
       <div class="skill-card">
-        <h2>Generative AI & LLMs</h2>
-        <div class="skill-list">
-          <span class="skill-item">Large Language Models</span>
-          <span class="skill-item">Prompt Engineering</span>
-          <span class="skill-item">RAG</span>
-          <span class="skill-item">AI Agents</span>
-          <span class="skill-item">Deterministic Pipelines</span>
-          <span class="skill-item">LLM Evaluation</span>
-        </div>
+        <h2>LLMs & Generative AI</h2>
+        <ul>
+          <li>Large Language Models (LLMs)</li>
+          <li>Prompt Engineering</li>
+          <li>Retrieval-Augmented Generation (RAG)</li>
+          <li>LLM Evaluation & Benchmarking</li>
+          <li>Failure Mode Analysis</li>
+        </ul>
       </div>
 
       <div class="skill-card">
         <h2>Data, MLOps & Platforms</h2>
-        <div class="skill-list">
-          <span class="skill-item">AWS</span>
-          <span class="skill-item">Azure</span>
-          <span class="skill-item">GCP</span>
-          <span class="skill-item">CI/CD</span>
-          <span class="skill-item">Monitoring</span>
-          <span class="skill-item">Git</span>
-          <span class="skill-item">Hugging Face</span>
-          <span class="skill-item">LangChain</span>
-        </div>
+        <ul>
+          <li>End-to-End Data Pipelines</li>
+          <li>Experiment Tracking & Monitoring</li>
+          <li>CI/CD</li>
+          <li>AWS, Azure, GCP</li>
+          <li>Git, Hugging Face, LangChain</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>Automation</h2>
+        <ul>
+          <li>Workflow Automation</li>
+          <li>Data Processing Automation</li>
+          <li>Scripted Evaluation Pipelines</li>
+          <li>Research & Analysis Automation</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>Automotive Software & Embedded Systems</h2>
+        <ul>
+          <li>Automotive Software Engineering</li>
+          <li>Embedded Systems Design</li>
+          <li>Multicore Programming</li>
+          <li>Real-Time Systems</li>
+          <li>Hardware/Software Codesign</li>
+          <li>Formal Specification & Verification</li>
+          <li>Image Understanding</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h2>Languages</h2>
+        <ul>
+          <li>English — C1</li>
+          <li>German — B1</li>
+        </ul>
       </div>
 
     </section>
