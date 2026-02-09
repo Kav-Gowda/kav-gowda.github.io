@@ -15,15 +15,6 @@ body {
   overflow-x: hidden;
   color: #000000;
 }
-/* =========================
-   GLOBAL TEXT COLOR OVERRIDE
-   ========================= */
-
-h1, h2, h3, h4, h5, h6,
-p, li, span, a {
-  color: #000000;
-}
-
 
 /* =========================
    GLOBAL BACKGROUND (ALL PAGES)
