@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio</title>
+  <title>Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Global styles -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -18,82 +17,153 @@
     }
 
     main.portfolio-page {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 160px 20px 120px; /* space below fixed nav */
+      padding: 160px 20px 120px;
     }
 
     /* =========================
-       SECTION STYLES
+       HEADER
        ========================= */
 
-    .portfolio-section {
-      margin-bottom: 120px;
-    }
-
-    .portfolio-section h2 {
-      font-family: "Cinzel", serif;
-      font-size: 34px;
+    .projects-header h1 {
+      font-size: 42px;
       color: #4a3b78;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .portfolio-section .subtitle {
-      font-size: 15px;
-      font-style: italic;
+    .projects-header p {
+      font-size: 16px;
       color: #5b4b8a;
-      margin-bottom: 40px;
+      max-width: 620px;
+      margin-bottom: 56px;
+      line-height: 1.6;
     }
 
-    .portfolio-section h3 {
-      font-size: 18px;
+    /* =========================
+       PROJECT CARD
+       ========================= */
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(91, 75, 138, 0.22);
+      border-radius: 18px;
+      padding: 34px 38px;
+      margin-bottom: 48px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-title {
+      font-size: 22px;
       font-weight: 600;
-      margin-top: 48px;
-      margin-bottom: 12px;
-      color: #2b2b2b;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #000000;
+      margin-bottom: 6px;
     }
 
-    .portfolio-section p {
+    .project-stack {
+      font-size: 14px;
+      color: #5b4b8a;
+      margin-bottom: 18px;
+    }
+
+    .project-description {
       font-size: 16px;
-      line-height: 1.75;
-      color: #2b2b2b;
-      margin-bottom: 16px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #000000;
+      line-height: 1.65;
+      margin-bottom: 22px;
+      max-width: 900px;
     }
 
-    .portfolio-section ul {
-      margin-left: 20px;
-      margin-top: 12px;
+    /* =========================
+       IMPACT
+       ========================= */
+
+    .project-impact {
+      margin-bottom: 22px;
     }
 
-    .portfolio-section li {
-      font-size: 16px;
-      line-height: 1.7;
+    .project-impact h4 {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4a3b78;
+      margin-bottom: 10px;
+    }
+
+    .project-impact ul {
+      padding-left: 18px;
+    }
+
+    .project-impact li {
+      font-size: 15px;
+      color: #000000;
       margin-bottom: 8px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
     }
 
-    .divider {
-      margin-top: 64px;
-      height: 1px;
-      background: rgba(0, 0, 0, 0.08);
+    /* =========================
+       TAGS + CTA
+       ========================= */
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-tag {
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(91, 75, 138, 0.12);
+      color: #4a3b78;
+      white-space: nowrap;
+    }
+
+    .project-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #6b6df6;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-cta:hover {
+      opacity: 0.9;
     }
 
     /* =========================
        MOBILE
        ========================= */
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       main.portfolio-page {
         padding: 120px 16px 96px;
       }
 
-      .portfolio-section h2 {
-        font-size: 28px;
+      .projects-header h1 {
+        font-size: 30px;
+      }
+
+      .project-card {
+        padding: 26px 24px;
+      }
+
+      .project-title {
+        font-size: 20px;
       }
     }
   </style>
@@ -107,16 +177,16 @@
   <aside class="mobile-menu" id="mobileMenu">
     <button class="close" id="closeMenu">×</button>
     <a href="index.html">Home</a>
-    <a href="resume.html">Resume</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="contact.html">Contact</a>
+    <a href="skills.html">Skills</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="achievements.html">Certifications</a>
+    <a href="resume.html">Experience</a>
+    <a href="education.html">Education</a>
   </aside>
 
   <!-- Desktop nav -->
   <nav class="desktop-nav">
     <div class="nav-inner">
-
       <div class="nav-left">
         <span class="nav-name">Kavitha Lingarajegowda</span>
         <span class="nav-role">Software & AI Engineer</span>
@@ -130,135 +200,184 @@
         <a href="resume.html">Experience</a>
         <a href="education.html">Education</a>
       </div>
-
-
     </div>
   </nav>
 
-
   <!-- =========================
-       PORTFOLIO CONTENT
+       PROJECTS CONTENT
        ========================= -->
 
   <main class="portfolio-page">
 
-    <!-- =========================
-         RESEARCH INTERNSHIP
-         ========================= -->
+    <header class="projects-header">
+      <h1>Selected Projects</h1>
+      <p>
+        A curated selection of projects focused on agentic systems,
+        retrieval-augmented generation, and production-oriented AI engineering.
+      </p>
+    </header>
 
-    <section class="portfolio-section">
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-title">Agentic Workflow Design Patterns</div>
+      <div class="project-stack">LangGraph · Agentic Systems · Deterministic Pipelines</div>
 
-      <h2>Research Internship</h2>
-      <div class="subtitle">
-        LLM-based grading and feedback analysis for AI and Computer Vision exams
+      <div class="project-description">
+        Designed a collection of reusable agentic workflow patterns using LangGraph,
+        focusing on controllability, determinism, and enterprise-ready orchestration.
       </div>
 
-      <h3>Context</h3>
-      <p>
-        This research internship focused on evaluating the feasibility of using
-        Large Language Models (LLMs) for automated grading and feedback generation
-        in university-level technical exams, particularly in Artificial Intelligence,
-        Computer Vision, and LLM-related coursework.
-      </p>
+      <div class="project-impact">
+        <h4>Impact</h4>
+        <ul>
+          <li>Implemented routing nodes, conditional flows, parallel branches, and state graphs</li>
+          <li>Enabled deterministic end-to-end execution for controllable AI systems</li>
+          <li>Demonstrates graph-based reasoning beyond single-agent prompts</li>
+        </ul>
+      </div>
 
-      <h3>Problem Statement</h3>
-      <p>
-        Manual grading of open-ended technical exams is time-consuming,
-        subjective, and difficult to scale. The core challenge was to assess
-        whether modern LLMs can reliably evaluate student answers, assign
-        consistent scores, and generate meaningful feedback—without compromising
-        fairness, correctness, or pedagogical value.
-      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">LangGraph</span>
+          <span class="project-tag">Agentic AI</span>
+          <span class="project-tag">State Graphs</span>
+          <span class="project-tag">Deterministic Pipelines</span>
+        </div>
 
-      <h3>Approach</h3>
-      <ul>
-        <li>Designed structured prompts for grading and feedback generation</li>
-        <li>Tested multiple LLM configurations across diverse exam questions</li>
-        <li>Compared model outputs against predefined grading criteria</li>
-        <li>Analyzed consistency, failure cases, and hallucination patterns</li>
-      </ul>
-
-      <h3>Key Explorations</h3>
-      <ul>
-        <li>Prompt engineering strategies for grading versus feedback tasks</li>
-        <li>Model sensitivity to question phrasing and answer structure</li>
-        <li>Differences between numerical scoring and qualitative feedback</li>
-        <li>Limitations of LLMs in mathematical and vision-related reasoning</li>
-      </ul>
-
-      <h3>Impact & Findings</h3>
-      <p>
-        The study demonstrated strong LLM performance for structured,
-        concept-based answers while revealing reduced reliability for visually
-        grounded or mathematically intensive tasks. Results highlighted the
-        importance of prompt design and rubric clarity, directly informing future
-        research directions in AI-assisted assessment and feedback systems.
-      </p>
-
-      <h3>Focus Areas & Skills</h3>
-      <ul>
-        <li>Large Language Models (LLMs)</li>
-        <li>Prompt Engineering for Evaluation</li>
-        <li>AI-assisted Grading & Feedback Systems</li>
-        <li>Model Behavior and Failure Analysis</li>
-        <li>Research-oriented Experimentation</li>
-        <li>Technical Analysis and Documentation</li>
-      </ul>
-
-      <div class="divider"></div>
-
-    </section>
-    <section class="portfolio-section">
-      <h2>Document & Web RAG Q&amp;A (Open-Source LLM)</h2>
-      <p class="subtitle">
-        An interactive Retrieval-Augmented Generation demo that answers questions grounded in uploaded PDFs/DOCX, pasted text, or a web URL.
-      </p>
-
-      <h3>Context</h3>
-      <p>
-        Independent project built end-to-end and deployed as a live demo. Focused on practical AI engineering: retrieval, grounding, and user-facing interaction.
-      </p>
-
-      <h3>Problem</h3>
-      <p>
-        LLMs can produce confident but incorrect answers when they don’t have access to up-to-date or private information. I wanted a system that can
-        reliably answer questions using <em>only</em> user-provided sources (documents or web pages), with clear grounding in retrieved context.
-      </p>
-
-      <h3>Approach</h3>
-      <ul>
-        <li><strong>Ingestion:</strong> Accepts PDF/DOCX uploads, raw text input, or a web link and extracts clean text for indexing.</li>
-        <li><strong>Chunking:</strong> Splits text into overlapping chunks to preserve context and improve retrieval recall.</li>
-        <li><strong>Embeddings + Vector Search:</strong> Generates sentence embeddings and stores them in a FAISS vector index for fast similarity search.</li>
-        <li><strong>Retrieval-Augmented Answering:</strong> Retrieves the most relevant chunks and answers strictly from that context to reduce hallucinations.</li>
-        <li><strong>Frontend:</strong> Deployed as a Gradio web app on Hugging Face Spaces for a simple, user-friendly demo workflow.</li>
-      </ul>
-
-      <h3>Impact</h3>
-      <ul>
-        <li>Delivers grounded Q&amp;A over user-provided documents and web content without requiring paid APIs.</li>
-        <li>Provides a live, interactive demo suitable for recruiter review (upload → ask → answer).</li>
-        <li>Demonstrates end-to-end AI system building: data ingestion, retrieval, and production-style deployment.</li>
-      </ul>
-
-      <h3>Skills</h3>
-      <ul>
-        <li>RAG system design (chunking strategies, retrieval, grounding)</li>
-        <li>Vector databases / similarity search (FAISS)</li>
-        <li>Embeddings (Sentence Transformers)</li>
-        <li>LLM integration and safe answer constraints</li>
-        <li>Deployment and MLOps fundamentals (Hugging Face Spaces)</li>
-      </ul>
-
-      <p>
-        <a href="https://huggingface.co/spaces/KavithaL4/rag-web-data-demo-1" target="_blank" rel="noopener noreferrer">
-          Live Demo (Hugging Face Space)
+        <a class="project-cta" href="https://github.com/Kav-Gowda/agentic-workflow-design-patterns-langgraph" target="_blank">
+          View Code
         </a>
-      </p>
-    </section>
+      </div>
+    </div>
 
-    <!-- Independent projects will go BELOW this later -->
-    <!-- Master’s thesis will go ABOVE this later -->
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-title">Web-Scale RAG Pipeline</div>
+      <div class="project-stack">LangChain · Llama 3.1 · Vector Search · Web Ingestion</div>
+
+      <div class="project-description">
+        Built a dynamic Retrieval-Augmented Generation pipeline capable of ingesting
+        live web data and generating context-aware responses in real time.
+      </div>
+
+      <div class="project-impact">
+        <h4>Impact</h4>
+        <ul>
+          <li>Designed streaming ingestion and adaptive retrieval workflows</li>
+          <li>Reduced hallucinations via strict context grounding</li>
+          <li>Demonstrates scalable, real-time RAG system design</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">RAG</span>
+          <span class="project-tag">LangChain</span>
+          <span class="project-tag">Llama 3.1</span>
+          <span class="project-tag">Vector Databases</span>
+        </div>
+
+        <a class="project-cta" href="https://github.com/Kav-Gowda/Web-Scale_RAG_Pipeline" target="_blank">
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <div class="project-title">Secure Document Summarization using RAG</div>
+      <div class="project-stack">LangChain · Granite LLM · Secure Retrieval</div>
+
+      <div class="project-description">
+        Developed a secure document retrieval and summarization system ensuring
+        private data remains confidential during conversational querying.
+      </div>
+
+      <div class="project-impact">
+        <h4>Impact</h4>
+        <ul>
+          <li>Implemented chunking, embeddings, and controlled access mechanisms</li>
+          <li>Prevented data leakage in conversational AI workflows</li>
+          <li>Focused on enterprise-grade document security</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Secure RAG</span>
+          <span class="project-tag">Granite LLM</span>
+          <span class="project-tag">LangChain</span>
+        </div>
+
+        <a class="project-cta" href="https://github.com/Kav-Gowda/Secure_Document_Summarization_using_RAG/blob/main/README.md" target="_blank">
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card">
+      <div class="project-title">Agentic Math Assistant with Tool Calling</div>
+      <div class="project-stack">LangChain · LangGraph · Tool Calling</div>
+
+      <div class="project-description">
+        Built an intelligent math assistant capable of selecting and executing
+        arithmetic tools through structured schemas and multi-step reasoning.
+      </div>
+
+      <div class="project-impact">
+        <h4>Impact</h4>
+        <ul>
+          <li>Implemented OpenAI-style tool calling with schema validation</li>
+          <li>Passed an internal test suite for correctness</li>
+          <li>Demonstrates reliable agent reasoning loops</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Tool Calling</span>
+          <span class="project-tag">LangChain</span>
+          <span class="project-tag">Agent Reasoning</span>
+        </div>
+
+        <a class="project-cta" href="https://github.com/Kav-Gowda/agentic-math-assistant-tool-calling-langchain" target="_blank">
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="project-card">
+      <div class="project-title">Visual Data Inspect AI</div>
+      <div class="project-stack">Computer Vision · Industrial ML · Quality Inspection</div>
+
+      <div class="project-description">
+        Developed a machine learning-based visual inspection system to detect
+        manufacturing defects from image data.
+      </div>
+
+      <div class="project-impact">
+        <h4>Impact</h4>
+        <ul>
+          <li>Bridges computer vision with industrial automation use cases</li>
+          <li>Supports scalable defect detection pipelines</li>
+          <li>Demonstrates applied ML beyond language models</li>
+        </ul>
+      </div>
+
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Computer Vision</span>
+          <span class="project-tag">Industrial AI</span>
+          <span class="project-tag">Automation</span>
+        </div>
+
+        <a class="project-cta" href="https://github.com/Kav-Gowda/VisualDataInspect-AI" target="_blank">
+          View Code
+        </a>
+      </div>
+    </div>
 
   </main>
 
