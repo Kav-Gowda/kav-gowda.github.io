@@ -67,8 +67,8 @@ body::before {
 body.home-page .desktop-nav a[href="index.html"],
 body.about-page .desktop-nav a[href="about.html"],
 body.resume-page .desktop-nav a[href="resume.html"],
-body.portfolio-page .desktop-nav a[href="portfolio.html"],
-body.achievements-page .desktop-nav a[href="achievements.html"],
+body.portfolio-page .desktop-nav a[href="projects.html"],
+body.achievements-page .desktop-nav a[href="certifications.html"],
 body.contact-page .desktop-nav a[href="contact.html"] {
   font-weight: 700;
   opacity: 1;
