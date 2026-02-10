@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Relevant Work</title>
+  <title>Projects · Kavitha Lingarajegowda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    body.portfolio-page {
+    body.projects-page {
       overflow-y: auto;
     }
 
-    main.portfolio-page {
+    main.projects-page {
       max-width: 1200px;
       margin: 0 auto;
       padding: 160px 20px 120px;
@@ -153,7 +153,6 @@
       }
     }
 
-    /* Ensure nav overlays content */
     .hamburger {
       z-index: 9999 !important;
     }
@@ -164,7 +163,7 @@
   </style>
 </head>
 
-<body class="portfolio-page">
+<body class="projects-page">
 
   <!-- Mobile nav -->
   <button class="hamburger" id="hamburger">☰</button>
@@ -186,10 +185,11 @@
         <span class="nav-name">Kavitha Lingarajegowda</span>
         <span class="nav-role">Software & AI Engineer</span>
       </div>
+
       <div class="nav-right">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="certifications.html">Certifications</a>
         <a href="resume.html">Experience</a>
         <a href="education.html">Education</a>
@@ -197,7 +197,7 @@
     </div>
   </nav>
 
-  <main class="portfolio-page">
+  <main class="projects-page">
 
     <header class="projects-header">
       <h1>Relevant Work</h1>
@@ -213,14 +213,12 @@
           A collection of reusable agentic workflow patterns designed for controllable,
           deterministic, and enterprise-ready AI systems.
         </div>
-
         <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           LangGraph workflows → routing & conditional nodes → parallel execution →
           state graph orchestration → deterministic agent output
         </div>
       </div>
-
       <div class="impact">
         <h4 class="impact-title">IMPACT</h4>
         <ul>
@@ -241,14 +239,12 @@
           A dynamic RAG system designed for live web ingestion and context-adaptive
           response generation.
         </div>
-
         <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Web ingestion → chunking & embeddings → vector retrieval →
           context filtering → Llama 3.1 generation
         </div>
       </div>
-
       <div class="impact">
         <h4 class="impact-title">IMPACT</h4>
         <ul>
@@ -268,14 +264,12 @@
         <div class="project-description">
           Secure document retrieval and summarization for confidential data workflows.
         </div>
-
         <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Document ingestion → embeddings → access-controlled retrieval →
           Granite LLM summarization
         </div>
       </div>
-
       <div class="impact">
         <h4 class="impact-title">IMPACT</h4>
         <ul>
@@ -295,14 +289,12 @@
         <div class="project-description">
           Structured math agent with deterministic tool execution.
         </div>
-
         <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           NL input → intent parsing → tool selection →
           arithmetic execution → validated output
         </div>
       </div>
-
       <div class="impact">
         <h4 class="impact-title">IMPACT</h4>
         <ul>
@@ -322,14 +314,12 @@
         <div class="project-description">
           ML-powered visual inspection system for manufacturing quality control.
         </div>
-
         <div class="architecture-toggle" onclick="toggleArch(this)">⌄ Show Architecture</div>
         <div class="architecture">
           Image ingestion → preprocessing → feature extraction →
           defect classification → inspection output
         </div>
       </div>
-
       <div class="impact">
         <h4 class="impact-title">IMPACT</h4>
         <ul>
