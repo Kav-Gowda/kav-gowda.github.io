@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Experience</title>
+  <title>Experience · Kavitha Lingarajegowda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
@@ -17,10 +17,6 @@
       margin: 0 auto;
       padding: 160px 20px 120px;
     }
-
-    /* =========================
-       HEADER
-       ========================= */
 
     .experience-header {
       display: flex;
@@ -65,10 +61,6 @@
       border: none;
     }
 
-    /* =========================
-       EXPERIENCE CARD
-       ========================= */
-
     .experience-card {
       background: rgba(255,255,255,0.95);
       border: 1px solid rgba(91, 75, 138, 0.22);
@@ -102,10 +94,6 @@
       line-height: 1.5;
     }
 
-    /* =========================
-       MOBILE
-       ========================= */
-
     @media (max-width: 900px) {
       main.resume-page {
         padding: 120px 16px 96px;
@@ -135,8 +123,8 @@
     <button class="close" id="closeMenu">×</button>
     <a href="index.html">Home</a>
     <a href="skills.html">Skills</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="achievements.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
     <a href="resume.html">Experience</a>
     <a href="education.html">Education</a>
   </aside>
@@ -148,20 +136,17 @@
         <span class="nav-name">Kavitha Lingarajegowda</span>
         <span class="nav-role">Software & AI Engineer</span>
       </div>
+
       <div class="nav-right">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="achievements.html">Certifications</a>
-        <a href="resume.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="resume.html" class="active">Experience</a>
         <a href="education.html">Education</a>
       </div>
     </div>
   </nav>
-
-  <!-- =========================
-       EXPERIENCE CONTENT
-       ========================= -->
 
   <main class="resume-page">
 
@@ -176,30 +161,28 @@
 
       <div class="cv-buttons">
         <a
-  class="cv-button"
-  href="/Kavitha_Lingarajegowda_Resume_2026.pdf"
-  target="_blank"
-  rel="noopener"
->
-  View CV
-</a>
+          class="cv-button"
+          href="/Kavitha_Lingarajegowda_Resume_2026.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          View CV
+        </a>
         <a
-  class="cv-button primary"
-  href="/Kavitha_Lingarajegowda_Resume_2026.pdf"
-  download
->
-  Download CV
-</a>
+          class="cv-button primary"
+          href="/Kavitha_Lingarajegowda_Resume_2026.pdf"
+          download
+        >
+          Download CV
+        </a>
       </div>
     </header>
 
-    <!-- MASTER'S THESIS -->
     <section class="experience-card">
       <div class="experience-role">Master’s Thesis — LLM-Based Grading & Feedback Systems</div>
       <div class="experience-meta">
         Chemnitz University of Technology, Germany · Oct 2025 – Mar 2026 (Current)
       </div>
-
       <div class="experience-points">
         <ul>
           <li>Built an end-to-end Python-based LLM grading system for 300+ real exam responses</li>
@@ -210,13 +193,11 @@
       </div>
     </section>
 
-    <!-- RESEARCH INTERNSHIP -->
     <section class="experience-card">
       <div class="experience-role">AI / LLM Research Intern</div>
       <div class="experience-meta">
         Professorship of Media Encoding, Chemnitz University of Technology, Germany · Sep 2024 – Sep 2025
       </div>
-
       <div class="experience-points">
         <ul>
           <li>Designed Python-based workflows to analyze LLM behavior on 1000+ exam responses</li>
@@ -227,13 +208,11 @@
       </div>
     </section>
 
-    <!-- WORKING STUDENT -->
     <section class="experience-card">
       <div class="experience-role">Software Development Working Student</div>
       <div class="experience-meta">
         iQuest Technologies, Mysore, India · Oct 2020 – Aug 2022
       </div>
-
       <div class="experience-points">
         <ul>
           <li>Developed Python-based ETL pipelines to prepare structured datasets</li>
@@ -245,10 +224,6 @@
     </section>
 
   </main>
-
-  <!-- =========================
-       MOBILE MENU SCRIPT
-       ========================= -->
 
   <script>
     const hamburger = document.getElementById("hamburger");
