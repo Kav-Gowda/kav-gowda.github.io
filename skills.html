@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Skills</title>
+  <title>Skills · Kavitha Lingarajegowda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* =========================
-       PAGE LAYOUT
-       ========================= */
-
     body.skills-page {
       overflow-y: auto;
     }
@@ -22,28 +18,19 @@
       padding: 160px 20px 120px;
     }
 
-    /* =========================
-       HEADER
-       ========================= */
-
     .skills-header h1 {
       font-size: 42px;
-      color: #4a3b78;   /* lavender heading */
+      color: #4a3b78;
       margin-bottom: 12px;
     }
 
     .skills-header p {
       font-size: 16px;
-      color: #5b4b8a;   /* lighter lavender subtitle */
+      color: #5b4b8a;
       margin-bottom: 64px;
       max-width: 620px;
       line-height: 1.6;
     }
-
-
-    /* =========================
-       SKILLS GRID
-       ========================= */
 
     .skills-grid {
       display: grid;
@@ -73,14 +60,10 @@
 
     .skill-card li {
       font-size: 16px;
-      color: #000000;
+      color: #000;
       margin-bottom: 10px;
       line-height: 1.6;
     }
-
-    /* =========================
-       MOBILE
-       ========================= */
 
     @media (max-width: 900px) {
       main.skills-page {
@@ -116,8 +99,8 @@
     <button class="close" id="closeMenu">×</button>
     <a href="index.html">Home</a>
     <a href="skills.html">Skills</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="achievements.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
     <a href="resume.html">Experience</a>
     <a href="education.html">Education</a>
   </aside>
@@ -132,18 +115,14 @@
 
       <div class="nav-right">
         <a href="index.html">Home</a>
-        <a href="skills.html">Skills</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="achievements.html">Certifications</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
         <a href="resume.html">Experience</a>
         <a href="education.html">Education</a>
       </div>
     </div>
   </nav>
-
-  <!-- =========================
-       SKILLS CONTENT
-       ========================= -->
 
   <main class="skills-page">
 
@@ -235,12 +214,7 @@
       </div>
 
     </section>
-
   </main>
-
-  <!-- =========================
-       MOBILE MENU SCRIPT
-       ========================= -->
 
   <script>
     const hamburger = document.getElementById("hamburger");
