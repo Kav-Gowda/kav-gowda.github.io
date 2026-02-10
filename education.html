@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Education</title>
+  <title>Education · Kavitha Lingarajegowda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
@@ -18,10 +18,6 @@
       padding: 160px 20px 120px;
     }
 
-    /* =========================
-       HEADER
-       ========================= */
-
     .education-header h1 {
       font-size: 42px;
       color: #4a3b78;
@@ -35,10 +31,6 @@
       margin-bottom: 56px;
       line-height: 1.6;
     }
-
-    /* =========================
-       EDUCATION CARD
-       ========================= */
 
     .edu-card {
       background: rgba(255,255,255,0.95);
@@ -100,10 +92,6 @@
       line-height: 1.45;
     }
 
-    /* =========================
-       MOBILE
-       ========================= */
-
     @media (max-width: 900px) {
       main.education-page {
         padding: 120px 16px 96px;
@@ -129,8 +117,8 @@
     <button class="close" id="closeMenu">×</button>
     <a href="index.html">Home</a>
     <a href="skills.html">Skills</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="achievements.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
     <a href="resume.html">Experience</a>
     <a href="education.html">Education</a>
   </aside>
@@ -146,17 +134,13 @@
       <div class="nav-right">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
-        <a href="portfolio.html">Projects</a>
-        <a href="achievements.html">Certifications</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
         <a href="resume.html">Experience</a>
-        <a href="education.html">Education</a>
+        <a href="education.html" class="active">Education</a>
       </div>
     </div>
   </nav>
-
-  <!-- =========================
-       EDUCATION CONTENT
-       ========================= -->
 
   <main class="education-page">
 
@@ -168,7 +152,6 @@
       </p>
     </header>
 
-    <!-- MASTER'S -->
     <section class="edu-card">
       <div class="edu-meta">
         <span>Oct 2022 – Mar 2026 (Expected)</span>
@@ -194,7 +177,6 @@
       </div>
     </section>
 
-    <!-- BACHELOR'S -->
     <section class="edu-card">
       <div class="edu-meta">
         <span>Aug 2018 – Jul 2022</span>
@@ -220,10 +202,6 @@
     </section>
 
   </main>
-
-  <!-- =========================
-       MOBILE MENU SCRIPT
-       ========================= -->
 
   <script>
     const hamburger = document.getElementById("hamburger");
